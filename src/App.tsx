@@ -341,14 +341,6 @@ const ContentText = styled.div`
   /* text-shadow: 0px 0px 10px #ffffff; */
 `;
 
-const References = styled.div`
-  position: relative;
-  width: 100%;
-  height: 500px;
-  background-color: white;
-  cursor: pointer;
-`;
-
 //FORM
 const FormContainer = styled.div`
   max-width: 1280px;
@@ -388,7 +380,7 @@ const Input = styled.input`
   height: 60px;
   width: 100%;
   border-width: 0;
-  background-color: #ddd;
+  background-color: #eee;
   font-family: 'HelveticaNeueLTPro-Bd';
   font-size: 20px;
   color: #66ccff;
@@ -403,7 +395,7 @@ const Select = styled.select`
   height: 60px;
   width: 100%;
   border-width: 0;
-  background-color: #ddd;
+  background-color: #eee;
   color: #000;
   font-family: 'HelveticaNeueLTPro-Bd';
   font-size: 18px;
@@ -428,7 +420,7 @@ const TextArea = styled.textarea`
   height: 100px;
   width: 100%;
   border-width: 0;
-  background-color: #ddd;
+  background-color: #eee;
   color: #66ccff;
   font-family: 'HelveticaNeueLTPro-Bd';
   font-size: 18px;
