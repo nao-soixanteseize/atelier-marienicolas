@@ -5,27 +5,32 @@ import styled from 'styled-components';
 interface HoverContainerProps {
   children: React.ReactNode;
   style?: any;
+  noHoverFrame?: boolean;
 }
 
 export const HoverContainer: FunctionComponent<HoverContainerProps> = ({
   children,
   style,
+  noHoverFrame,
 }) => {
   const [hover, setHover] = useState(false);
 
   const crossSize = 15;
-  const frameInitialSize = 40;
-  const frameHoverSize = 30;
+  const frameInitialSize = 0;
+  const frameHoverSize = 20;
   const border = '.75px solid black';
+
+  const frameColor = 'white';
+
   return (
-    <Container style={style}>
+    <Container style={{ ...style, backgroundColor: frameColor }}>
       <motion.div
         style={{
           position: 'relative',
           width: '100%',
           height: '100%',
           opacity: 0,
-          scale: 0.5,
+          scale: 0.95,
         }}
         onHoverStart={() => setHover(true)}
         onHoverEnd={() => setHover(false)}
@@ -35,7 +40,7 @@ export const HoverContainer: FunctionComponent<HoverContainerProps> = ({
           transition: { duration: 0.5 },
         }}
       >
-        <div
+        {/* <div
           style={{
             position: 'absolute',
             top: 0,
@@ -88,52 +93,56 @@ export const HoverContainer: FunctionComponent<HoverContainerProps> = ({
             borderTop: 'none',
             transform: `translate(0.5px, 0px)`,
           }}
-        />
+        /> */}
 
-        <motion.div
-          style={{
-            position: 'absolute',
-            width: '100%',
-            top: 0,
-            left: 0,
-            backgroundColor: 'white',
-            zIndex: 10,
-          }}
-          animate={{ height: hover ? frameHoverSize : frameInitialSize }}
-        />
-        <motion.div
-          style={{
-            position: 'absolute',
-            width: '100%',
-            bottom: 0,
-            left: 0,
-            backgroundColor: 'white',
-            zIndex: 10,
-          }}
-          animate={{ height: hover ? frameHoverSize : frameInitialSize }}
-        />
-        <motion.div
-          style={{
-            position: 'absolute',
-            height: '100%',
-            bottom: 0,
-            left: 0,
-            backgroundColor: 'white',
-            zIndex: 10,
-          }}
-          animate={{ width: hover ? frameHoverSize : frameInitialSize }}
-        />
-        <motion.div
-          style={{
-            position: 'absolute',
-            height: '100%',
-            bottom: 0,
-            right: 0,
-            backgroundColor: 'white',
-            zIndex: 10,
-          }}
-          animate={{ width: hover ? frameHoverSize : frameInitialSize }}
-        />
+        {!noHoverFrame && (
+          <>
+            <motion.div
+              style={{
+                position: 'absolute',
+                width: '100%',
+                top: 0,
+                left: 0,
+                backgroundColor: frameColor,
+                zIndex: 10,
+              }}
+              animate={{ height: hover ? frameHoverSize : frameInitialSize }}
+            />
+            <motion.div
+              style={{
+                position: 'absolute',
+                width: '100%',
+                bottom: 0,
+                left: 0,
+                backgroundColor: frameColor,
+                zIndex: 10,
+              }}
+              animate={{ height: hover ? frameHoverSize : frameInitialSize }}
+            />
+            <motion.div
+              style={{
+                position: 'absolute',
+                height: '100%',
+                bottom: 0,
+                left: 0,
+                backgroundColor: frameColor,
+                zIndex: 10,
+              }}
+              animate={{ width: hover ? frameHoverSize : frameInitialSize }}
+            />
+            <motion.div
+              style={{
+                position: 'absolute',
+                height: '100%',
+                bottom: 0,
+                right: 0,
+                backgroundColor: frameColor,
+                zIndex: 10,
+              }}
+              animate={{ width: hover ? frameHoverSize : frameInitialSize }}
+            />
+          </>
+        )}
         {children}
       </motion.div>
     </Container>

@@ -4,14 +4,16 @@ import styled from 'styled-components';
 
 interface MainImageContainerProps {
   image: any;
-  hoverImage: any;
+  hoverImage?: any;
   hoverImageStyle?: any;
+  height?: string;
 }
 
 export const MainImageContainer: FunctionComponent<MainImageContainerProps> = ({
   image,
   hoverImage,
   hoverImageStyle,
+  height = '100%',
 }) => {
   const [hover, setHover] = useState(false);
 
@@ -20,41 +22,43 @@ export const MainImageContainer: FunctionComponent<MainImageContainerProps> = ({
       style={{
         position: 'relative',
         width: '100%',
-        height: '100%',
+        height,
         backgroundColor: 'black',
-        scale: 0.99,
+        // scale: 0.99,
         overflow: 'hidden',
       }}
       whileTap={{ scale: 1 }}
       whileHover={{
-        scale: 0.95,
+        scale: 0.98,
       }}
       onHoverStart={() => setHover(true)}
       onHoverEnd={() => setHover(false)}
       transition={{ duration: 1 }}
     >
       <Img hover={hover} src={image} />
-      <AnimatePresence>
-        {hover && (
-          <motion.div
-            style={{
-              position: 'absolute',
-              height: '100%',
-              width: '100%',
-              top: 0,
-              left: 0,
-              opacity: 0,
+      {hoverImage && (
+        <AnimatePresence>
+          {hover && (
+            <motion.div
+              style={{
+                position: 'absolute',
+                height: '100%',
+                width: '100%',
+                top: 0,
+                left: 0,
+                opacity: 0,
 
-              ...hoverImageStyle,
-            }}
-            animate={{ opacity: 1 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 2 }}
-          >
-            <HoverImg src={hoverImage} />
-          </motion.div>
-        )}
-      </AnimatePresence>
+                ...hoverImageStyle,
+              }}
+              animate={{ opacity: 1 }}
+              whileTap={{ scale: 1 }}
+              transition={{ duration: 2 }}
+            >
+              <HoverImg src={hoverImage} />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
     </motion.div>
   );
 };

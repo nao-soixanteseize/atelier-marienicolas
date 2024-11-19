@@ -1,179 +1,103 @@
 import styled from 'styled-components';
 import './App.css';
+import { BrandImage } from './BrandImage';
+import { BrandImageText } from './BrandImageText';
 import { HoverContainer } from './HoverContainer';
-import { Layout } from './Layout';
-import { MainImageContainer } from './MainImageContainer';
-import { Testimonial } from './Testimonial';
-import AtelierImage from './img/Atelier1.jpg';
-import GreenImage from './img/Green.png';
 import MountainImage from './img/Mountain.jpg';
 import MountainLineImage from './img/MountainLine.png';
-import OrchestraLine from './img/OrchestraLine.png';
 import PathImage from './img/Path.jpg';
 import PathLineImage from './img/PathLine.png';
 import PortraitImage from './img/Portrait1.png';
+import { Layout } from './Layout';
 
 const App = () => {
+  const headerHeight = 190;
+
+  const paddingRow1 = 0;
+  const paddingRow2 = 200;
+  const paddingRow3 = 40;
   return (
     <Layout>
-      <MainRow>
-        <Leadership>
-          <HoverContainer>
-            <MainImageContainer
-              image={MountainImage}
-              hoverImage={MountainLineImage}
-            />
-          </HoverContainer>
-          {/* <ContentText>{'Leadership Advisory'}</ContentText> */}
-        </Leadership>
-        <Executive>
-          <HoverContainer>
-            <MainImageContainer image={PathImage} hoverImage={PathLineImage} />
-          </HoverContainer>
-          {/* <ContentText>{'Executive Search'}</ContentText> */}
-        </Executive>
-      </MainRow>
+      <Row
+        style={{
+          padding: paddingRow1,
+          width: `calc(100vw - ${paddingRow1 * 2}px)`,
+          height: `calc(100vh - ${headerHeight + paddingRow1 * 2}px)`,
+        }}
+      >
+        <BrandImage image={MountainImage} hoverImage={MountainLineImage} />
+        <BrandImage
+          style={{ width: '65%' }}
+          image={PathImage}
+          hoverImage={PathLineImage}
+        />
+      </Row>
 
-      <Row style={{ gap: 40, marginBottom: '80px', marginTop: '80px' }}>
-        <Testimonial
-          title={'Marie Nicolas'}
+      <Row
+        style={{
+          padding: paddingRow2,
+          width: `calc(100vw - ${paddingRow2 * 2}px)`,
+          height: `calc(100vh - ${paddingRow2 * 2}px)`,
+        }}
+      >
+        <BrandImageText
+          title={'Atelier Marie Nicolas'}
           image={PortraitImage}
-          hoverImage={OrchestraLine}
-          style={{ width: '50%', paddingLeft: 80 }}
-        />
-        <Testimonial
-          title={"L'atelier"}
-          image={AtelierImage}
-          hoverImage={OrchestraLine}
-          style={{ width: '50%', paddingTop: 120, paddingRight: 80 }}
+          style={{
+            borderColor: 'black',
+            borderWidth: 0,
+            borderRightWidth: 0.5,
+            borderStyle: 'solid',
+          }}
         />
       </Row>
 
-      <Row style={{ width: '80%', margin: '120px 160px 40px 0px' }}>
-        <Wording>
-          <HoverContainer>
-            <MainImageContainer
-              image={GreenImage}
-              hoverImage={OrchestraLine}
-              hoverImageStyle={{
-                transform: 'scale(85%, 65%) translate(-4%, -5%)',
-              }}
-            />
-          </HoverContainer>
-          <ContentText>{'UNIQUES'}</ContentText>
-        </Wording>
+      <TitleRow
+        style={{
+          width: `calc(100vw - ${paddingRow3 * 2}px)`,
+          paddingBottom: paddingRow3 - 5,
+          marginLeft: paddingRow3,
+          marginRight: paddingRow3,
+        }}
+      >
+        <ContentText>{'UNIQUES'}</ContentText>
+      </TitleRow>
+
+      <Row
+        style={{
+          padding: paddingRow3,
+          width: `calc(100vw - ${paddingRow3 * 2}px)`,
+          gap: 40,
+        }}
+      >
+        <Content style={{ gap: 40 }}>
+          <BrandImage image={MountainImage} hoverImage={MountainLineImage} />
+
+          <BrandImage
+            height={'800px'}
+            image={PathImage}
+            hoverImage={MountainLineImage}
+          />
+        </Content>
+
+        <Content style={{ gap: 40 }}>
+          <BrandImage
+            height={'800px'}
+            image={PathImage}
+            hoverImage={MountainLineImage}
+          />
+          <BrandImage image={MountainImage} hoverImage={MountainLineImage} />
+        </Content>
+
+        <Content style={{ gap: 40 }}>
+          <BrandImage image={MountainImage} hoverImage={MountainLineImage} />
+          <BrandImage
+            height={'800px'}
+            image={PathImage}
+            hoverImage={MountainLineImage}
+          />
+        </Content>
       </Row>
-
-      <MainRow style={{ width: '80%', margin: '0px 0px 40px 330px' }}>
-        <Leadership>
-          <HoverContainer>
-            <MainImageContainer
-              image={MountainImage}
-              hoverImage={MountainLineImage}
-            />
-          </HoverContainer>
-          {/* <ContentText>{'Leadership Advisory'}</ContentText> */}
-        </Leadership>
-        <Executive>
-          <HoverContainer>
-            <MainImageContainer image={PathImage} hoverImage={PathLineImage} />
-          </HoverContainer>
-          {/* <ContentText>{'Executive Search'}</ContentText> */}
-        </Executive>
-      </MainRow>
-
-      <MainRow style={{ width: '100%', margin: '0px 0px 0px 0px' }}>
-        <Leadership>
-          <HoverContainer>
-            <MainImageContainer
-              image={MountainImage}
-              hoverImage={MountainLineImage}
-            />
-          </HoverContainer>
-          {/* <ContentText>{'Leadership Advisory'}</ContentText> */}
-        </Leadership>
-      </MainRow>
-
-      <MainRow style={{ width: '80%', margin: '40px 0px 40px 0px' }}>
-        <Leadership>
-          <HoverContainer>
-            <MainImageContainer
-              image={MountainImage}
-              hoverImage={MountainLineImage}
-            />
-          </HoverContainer>
-          {/* <ContentText>{'Leadership Advisory'}</ContentText> */}
-        </Leadership>
-        <Executive>
-          <HoverContainer>
-            <MainImageContainer image={PathImage} hoverImage={PathLineImage} />
-          </HoverContainer>
-          {/* <ContentText>{'Executive Search'}</ContentText> */}
-        </Executive>
-      </MainRow>
-
-      <Row style={{ width: '80%', margin: '120px 0px 40px 330px' }}>
-        <Wording>
-          <HoverContainer>
-            <MainImageContainer
-              image={GreenImage}
-              hoverImage={OrchestraLine}
-              hoverImageStyle={{
-                transform: 'scale(85%, 65%) translate(-4%, -5%)',
-              }}
-            />
-          </HoverContainer>
-          <ContentText>{'SERIES'}</ContentText>
-        </Wording>
-      </Row>
-
-      <MainRow style={{ width: '80%', margin: '0px 330px 40px 0px' }}>
-        <Leadership>
-          <HoverContainer>
-            <MainImageContainer
-              image={MountainImage}
-              hoverImage={MountainLineImage}
-            />
-          </HoverContainer>
-          {/* <ContentText>{'Leadership Advisory'}</ContentText> */}
-        </Leadership>
-        <Executive>
-          <HoverContainer>
-            <MainImageContainer image={PathImage} hoverImage={PathLineImage} />
-          </HoverContainer>
-          {/* <ContentText>{'Executive Search'}</ContentText> */}
-        </Executive>
-      </MainRow>
-
-      <MainRow style={{ width: '100%', margin: '0px 0px 0px 0px' }}>
-        <Leadership>
-          <HoverContainer>
-            <MainImageContainer
-              image={MountainImage}
-              hoverImage={MountainLineImage}
-            />
-          </HoverContainer>
-          {/* <ContentText>{'Leadership Advisory'}</ContentText> */}
-        </Leadership>
-      </MainRow>
-
-      <MainRow style={{ width: '80%', margin: '40px 0px 40px 330px' }}>
-        <Leadership>
-          <HoverContainer>
-            <MainImageContainer
-              image={MountainImage}
-              hoverImage={MountainLineImage}
-            />
-          </HoverContainer>
-          {/* <ContentText>{'Leadership Advisory'}</ContentText> */}
-        </Leadership>
-        <Executive>
-          <HoverContainer>
-            <MainImageContainer image={PathImage} hoverImage={PathLineImage} />
-          </HoverContainer>
-          {/* <ContentText>{'Executive Search'}</ContentText> */}
-        </Executive>
-      </MainRow>
 
       <Row
         style={{
@@ -294,51 +218,32 @@ const App = () => {
 
 export default App;
 
-const MainRow = styled.div`
-  display: flex;
-  width: 100%;
-  height: calc(100vh - 150px);
-  cursor: pointer;
-`;
 const Row = styled.div`
   display: flex;
   width: 100%;
 `;
-const Leadership = styled.div`
-  position: relative;
+const TitleRow = styled.div`
+  display: flex;
   width: 100%;
-  height: calc(100vh - 150px);
-  background-color: #000000;
-  /* overflow: hidden; */
-`;
+  border-color: black;
+  border-width: 0;
+  border-bottom-width: 0.5px;
+  border-style: solid;
 
-const Executive = styled.div`
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 150px);
-  background-color: #000000;
-  cursor: pointer;
+  justify-content: center;
 `;
-
-const Wording = styled.div`
-  position: relative;
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 250px;
-  background-color: white;
-  cursor: pointer;
+  height: 100%;
 `;
 
 const ContentText = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
   font-family: 'Wix Madefor Display', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: 3px;
   color: #000000;
-  transform: translate(-50%, -56%);
-  /* text-shadow: 0px 0px 10px #ffffff; */
 `;
 
 //FORM

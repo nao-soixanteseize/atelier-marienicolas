@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import Logo from './img/Logo.svg';
+import Logo from './img/LogoMN.svg';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
         <LogoContainer>
           <LogoImg src={Logo} />
         </LogoContainer>
-        <MenuContainer>{`MARIE NICOLAS    |    CATALOGUE    |    CONTACTS`}</MenuContainer>
+        <MenuContainer>{`ATELIER    |    CATALOGUE    |    CONTACT`}</MenuContainer>
       </Header>
       <ChildrenContainer>
         {children}
@@ -30,18 +30,20 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
 const Container = styled.div`
   height: 100vh;
   width: 100vw;
-  /* overflow: hidden; */
+  overflow-x: hidden;
+  overflow-y: scroll;
 `;
 const Header = styled.header`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  height: 45px;
+  height: 125px;
   width: calc(100vw - 80px);
   /* border-bottom: 1px solid #000; */
   margin: 0 40px;
   padding-top: 28px;
   padding-bottom: 30px;
+  gap: 20px;
 `;
 const Footer = styled.header`
   margin-top: 80px;
@@ -54,20 +56,18 @@ const Footer = styled.header`
 `;
 const MenuContainer = styled.div`
   font-family: 'Wix Madefor Display', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 10px;
   letter-spacing: 3px;
   color: #000000;
 `;
 const LogoContainer = styled.div`
   position: relative;
-  width: 200px;
+  width: 100px;
 `;
 const LogoImg = styled.img``;
 const ChildrenContainer = styled.div`
   background-color: #fff;
-  height: calc(100vh - 150px);
-  overflow-y: scroll;
-  padding: 40px;
-  padding-top: 10px;
+  /* padding: 40px; */
+  padding-top: 8px;
 `;
