@@ -2,10 +2,37 @@ import styled from 'styled-components';
 import './App.css';
 import { BrandImage } from './BrandImage';
 import { BrandImageText } from './BrandImageText';
-import { HoverContainer } from './HoverContainer';
-import MountainImage from './img/Mountain.jpg';
+import Image1 from './img/1.jpg';
+import Image12 from './img/12.jpg';
+import Image13 from './img/13.jpg';
+import Image17 from './img/17.jpg';
+import Image18 from './img/18.jpg';
+import Image19 from './img/19.jpg';
+import Image20 from './img/20.jpg';
+import Image21 from './img/21.jpg';
+import Image22 from './img/22.jpg';
+import Image23 from './img/23.jpg';
+import Image25 from './img/25.jpg';
+import Image26 from './img/26.jpg';
+import Image37 from './img/37.jpg';
+import Image38 from './img/38.jpg';
+import Image39 from './img/39.jpg';
+import Image40 from './img/40.jpg';
+import Image41 from './img/41.jpg';
+import Image42 from './img/42.jpg';
+import Image43 from './img/43.jpg';
+import Image44 from './img/44.jpg';
+import Image45 from './img/45.jpg';
+import Image46 from './img/46.jpg';
+import Image48 from './img/48.jpg';
+import Image5 from './img/5.jpg';
+import Image50 from './img/50.jpg';
+import Image52 from './img/52.jpg';
+import Image53 from './img/53.jpg';
+import Image55 from './img/55.jpg';
+import Image57 from './img/57.jpg';
+import Image58 from './img/58.jpg';
 import MountainLineImage from './img/MountainLine.png';
-import PathImage from './img/Path.jpg';
 import PathLineImage from './img/PathLine.png';
 import PortraitImage from './img/Portrait1.png';
 import { Layout } from './Layout';
@@ -16,6 +43,235 @@ const App = () => {
   const paddingRow1 = 0;
   const paddingRow2 = 200;
   const paddingRow3 = 40;
+
+  const array1 = [
+    {
+      image: Image1,
+      name: 'Image1',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image19,
+      name: 'Image19',
+      height: '50vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image5,
+      name: 'Image5',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image12,
+      name: 'Image12',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image17,
+      name: 'Image17',
+      height: '25vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image21,
+      name: 'Image21',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image26,
+      name: 'Image26',
+      height: '25vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image37,
+      name: 'Image37',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image41,
+      name: 'Image41',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image45,
+      name: 'Image45',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image50,
+      name: 'Image50',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+  ];
+
+  const array2 = [
+    {
+      image: Image13,
+      name: 'Image13',
+      height: '25vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image20,
+      name: 'Image20',
+      height: '50vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+
+    {
+      image: Image22,
+      name: 'Image22',
+      height: '25vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image23,
+      name: 'Image23',
+      height: '25vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image38,
+      name: 'Image38',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image42,
+      name: 'Image42',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image46,
+      name: 'Image46',
+      height: '40vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+
+    {
+      image: Image53,
+      name: 'Image53',
+      height: '40vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image52,
+      name: 'Image52',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image53,
+      name: 'Image53',
+      height: '40vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+  ];
+
+  const array3 = [
+    {
+      image: Image18,
+      name: 'Image18',
+      height: '50vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image25,
+      name: 'Image25',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image39,
+      name: 'Image39',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image40,
+      name: 'Image40',
+      height: '40vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image43,
+      name: 'Image43',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image44,
+      name: 'Image44',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image48,
+      name: 'Image48',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image55,
+      name: 'Image55',
+      height: '40vw',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image57,
+      name: 'Image57',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+    {
+      image: Image58,
+      name: 'Image58',
+      height: '100%',
+      description: 'Lorem ipsum',
+      size: '20x20cm',
+    },
+  ];
+
   return (
     <Layout>
       <Row
@@ -25,10 +281,10 @@ const App = () => {
           height: `calc(100vh - ${headerHeight + paddingRow1 * 2}px)`,
         }}
       >
-        <BrandImage image={MountainImage} hoverImage={MountainLineImage} />
+        <BrandImage image={Image44} hoverImage={MountainLineImage} />
         <BrandImage
           style={{ width: '65%' }}
-          image={PathImage}
+          image={Image53}
           hoverImage={PathLineImage}
         />
       </Row>
@@ -71,43 +327,69 @@ const App = () => {
         }}
       >
         <Content style={{ gap: 40 }}>
-          <BrandImage image={MountainImage} hoverImage={MountainLineImage} />
-
-          <BrandImage
-            height={'800px'}
-            image={PathImage}
-            hoverImage={MountainLineImage}
-          />
+          {array1.map((piece, index) => (
+            <BrandImage
+              key={index}
+              image={piece.image}
+              height={piece.height}
+              name={piece.name}
+              description={piece.description}
+              size={piece.size}
+              hoverImage={MountainLineImage}
+            />
+          ))}
         </Content>
 
         <Content style={{ gap: 40 }}>
-          <BrandImage
-            height={'800px'}
-            image={PathImage}
-            hoverImage={MountainLineImage}
-          />
-          <BrandImage image={MountainImage} hoverImage={MountainLineImage} />
+          {array2.map((piece, index) => (
+            <BrandImage
+              key={index}
+              image={piece.image}
+              height={piece.height}
+              name={piece.name}
+              description={piece.description}
+              size={piece.size}
+              hoverImage={MountainLineImage}
+            />
+          ))}
         </Content>
 
         <Content style={{ gap: 40 }}>
-          <BrandImage image={MountainImage} hoverImage={MountainLineImage} />
-          <BrandImage
-            height={'800px'}
-            image={PathImage}
-            hoverImage={MountainLineImage}
-          />
+          {array3.map((piece, index) => (
+            <BrandImage
+              key={index}
+              image={piece.image}
+              height={piece.height}
+              name={piece.name}
+              description={piece.description}
+              size={piece.size}
+              hoverImage={MountainLineImage}
+            />
+          ))}
         </Content>
       </Row>
 
+      <TitleRow
+        style={{
+          marginTop: 80,
+          marginBottom: 40,
+          width: `calc(60vw)`,
+          paddingBottom: paddingRow3 - 5,
+          marginLeft: '20%',
+          marginRight: '20%',
+        }}
+      >
+        <ContentText>{'CONTACT'}</ContentText>
+      </TitleRow>
+
       <Row
         style={{
-          margin: '120px auto',
           justifyContent: 'center',
           alignItems: 'center',
         }}
       >
-        <HoverContainer style={{ width: '1024px' }}>
-          <FormContainer style={{ padding: 40 }}>
+        <div style={{ width: '60%' }}>
+          <FormContainer>
             <form
               name="CONTACT_FORM"
               method="post"
@@ -210,7 +492,7 @@ const App = () => {
               </ButtonRow>
             </form>
           </FormContainer>
-        </HoverContainer>
+        </div>
       </Row>
     </Layout>
   );
@@ -268,7 +550,6 @@ const FormRow = styled.div`
 const InputContainer = styled.div`
   width: calc(var(--vw, 1vw) * 100);
   background-color: #fff;
-  margin: 0px 20px 16px 0;
   padding: 20px 20px 10px 20px;
   @media (max-width: 1280px) {
     width: calc((var(--vw, 1vw) * 100) - 90px);

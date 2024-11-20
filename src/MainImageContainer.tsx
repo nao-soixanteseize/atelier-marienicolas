@@ -20,11 +20,16 @@ export const MainImageContainer: FunctionComponent<MainImageContainerProps> = ({
   return (
     <motion.div
       style={{
-        position: 'relative',
+        // position: 'relative',
         width: '100%',
         height,
         backgroundColor: 'black',
-        // scale: 0.99,
+
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+        // scale: 1,
         overflow: 'hidden',
       }}
       whileTap={{ scale: 1 }}

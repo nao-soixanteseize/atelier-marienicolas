@@ -6,12 +6,18 @@ interface HoverContainerProps {
   children: React.ReactNode;
   style?: any;
   noHoverFrame?: boolean;
+  name?: string;
+  description?: string;
+  size?: string;
 }
 
 export const HoverContainer: FunctionComponent<HoverContainerProps> = ({
   children,
   style,
   noHoverFrame,
+  name,
+  description,
+  size,
 }) => {
   const [hover, setHover] = useState(false);
 
@@ -40,61 +46,6 @@ export const HoverContainer: FunctionComponent<HoverContainerProps> = ({
           transition: { duration: 0.5 },
         }}
       >
-        {/* <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: crossSize,
-            height: crossSize,
-            zIndex: 100,
-            border,
-            borderRight: 'none',
-            borderBottom: 'none',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            width: crossSize,
-            height: crossSize,
-            zIndex: 100,
-            border,
-            borderLeft: 'none',
-            borderBottom: 'none',
-            transform: `translate(0.5px, 0px)`,
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            width: crossSize,
-            height: crossSize,
-            zIndex: 100,
-            border,
-            borderRight: 'none',
-            borderTop: 'none',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            right: 0,
-            width: crossSize,
-            height: crossSize,
-            zIndex: 100,
-            border,
-            borderLeft: 'none',
-            borderTop: 'none',
-            transform: `translate(0.5px, 0px)`,
-          }}
-        /> */}
-
         {!noHoverFrame && (
           <>
             <motion.div
@@ -143,14 +94,47 @@ export const HoverContainer: FunctionComponent<HoverContainerProps> = ({
             />
           </>
         )}
+
         {children}
+      </motion.div>
+
+      <motion.div
+        style={{
+          position: 'absolute',
+          zIndex: 20,
+          width: '100%',
+          bottom: -5,
+          opacity: 0,
+        }}
+        animate={{ opacity: hover ? 1 : 0 }}
+      >
+        <LegendeRow>
+          {name && <Legende>{name}</Legende>}
+          {description && (
+            <Legende style={{ width: '50%' }}>{description}</Legende>
+          )}
+          {size && <Legende>{size}</Legende>}
+        </LegendeRow>
       </motion.div>
     </Container>
   );
 };
 
 const Container = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
   background-color: white;
+`;
+const LegendeRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+`;
+const Legende = styled.div`
+  color: #888;
+  font-family: 'Wix Madefor Display', sans-serif;
+  font-size: 12px;
+  margin-bottom: -8;
 `;

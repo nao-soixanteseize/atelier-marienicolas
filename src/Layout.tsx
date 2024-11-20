@@ -47,12 +47,13 @@ const Header = styled.header`
 `;
 const Footer = styled.header`
   margin-top: 80px;
+  padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
   width: calc(100vw - 80px);
-  border-top: 1px solid #000;
+  border-top: 0.5px solid #000;
 `;
 const MenuContainer = styled.div`
   font-family: 'Wix Madefor Display', sans-serif;
