@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import './App.css';
 import { BrandImage } from './BrandImage';
 import { BrandImageText } from './BrandImageText';
+import { useWindowSize } from './hooks/useWindowSize';
 import Image1 from './img/1.jpg';
 import Image12 from './img/12.jpg';
 import Image13 from './img/13.jpg';
@@ -33,16 +34,13 @@ import Image55 from './img/55.jpg';
 import Image57 from './img/57.jpg';
 import Image58 from './img/58.jpg';
 import MountainLineImage from './img/MountainLine.png';
-import PathLineImage from './img/PathLine.png';
 import PortraitImage from './img/Portrait1.png';
 import { Layout } from './Layout';
 
 const App = () => {
   const headerHeight = 190;
 
-  const paddingRow1 = 0;
-  const paddingRow2 = 200;
-  const paddingRow3 = 40;
+  const { windowSize, device } = useWindowSize();
 
   const array1 = [
     {
@@ -272,22 +270,29 @@ const App = () => {
     },
   ];
 
+  const paddingRow2 = device === 'mobile' ? 40 : device === 'tablet' ? 80 : 200;
+  const paddingRow3 = 40;
+
   return (
     <Layout>
-      <Row
-        style={{
-          padding: paddingRow1,
-          width: `calc(100vw - ${paddingRow1 * 2}px)`,
-          height: `calc(100vh - ${headerHeight + paddingRow1 * 2}px)`,
-        }}
-      >
-        <BrandImage image={Image44} hoverImage={MountainLineImage} />
-        <BrandImage
-          style={{ width: '65%' }}
-          image={Image53}
-          hoverImage={PathLineImage}
-        />
-      </Row>
+      <Welcome headerHeight={headerHeight}>
+        <div style={{ display: 'flex', width: windowSize.width * 2 }}>
+          <BrandImage
+            style={{
+              width: windowSize.width,
+            }}
+            image={Image44}
+            hoverImage={MountainLineImage}
+          />
+          <BrandImage
+            style={{
+              width: windowSize.width,
+            }}
+            image={Image53}
+            hoverImage={MountainLineImage}
+          />
+        </div>
+      </Welcome>
 
       <Row
         style={{
@@ -296,16 +301,7 @@ const App = () => {
           height: `calc(100vh - ${paddingRow2 * 2}px)`,
         }}
       >
-        <BrandImageText
-          title={'Atelier Marie Nicolas'}
-          image={PortraitImage}
-          style={{
-            borderColor: 'black',
-            borderWidth: 0,
-            borderRightWidth: 0.5,
-            borderStyle: 'solid',
-          }}
-        />
+        <BrandImageText title={'Atelier Marie Nicolas'} image={PortraitImage} />
       </Row>
 
       <TitleRow
@@ -316,7 +312,7 @@ const App = () => {
           marginRight: paddingRow3,
         }}
       >
-        <ContentText>{'UNIQUES'}</ContentText>
+        <ContentText>{'PIÉCES UNIQUES'}</ContentText>
       </TitleRow>
 
       <Row
@@ -331,7 +327,13 @@ const App = () => {
             <BrandImage
               key={index}
               image={piece.image}
-              height={piece.height}
+              height={
+                device === 'mobile'
+                  ? '100%'
+                  : device === 'tablet'
+                  ? '100%'
+                  : piece.height
+              }
               name={piece.name}
               description={piece.description}
               size={piece.size}
@@ -345,7 +347,13 @@ const App = () => {
             <BrandImage
               key={index}
               image={piece.image}
-              height={piece.height}
+              height={
+                device === 'mobile'
+                  ? '100%'
+                  : device === 'tablet'
+                  ? '100%'
+                  : piece.height
+              }
               name={piece.name}
               description={piece.description}
               size={piece.size}
@@ -359,7 +367,13 @@ const App = () => {
             <BrandImage
               key={index}
               image={piece.image}
-              height={piece.height}
+              height={
+                device === 'mobile'
+                  ? '100%'
+                  : device === 'tablet'
+                  ? '100%'
+                  : piece.height
+              }
               name={piece.name}
               description={piece.description}
               size={piece.size}
@@ -500,9 +514,24 @@ const App = () => {
 
 export default App;
 
+const Welcome = styled.div<{ headerHeight: number }>`
+  display: flex;
+  width: 100%;
+  padding: 0;
+  width: calc(100vw);
+  height: ${({ headerHeight }) => `calc(100vh - ${headerHeight}px)`};
+  overflow-y: hidden;
+  @media (max-width: 1280px) {
+    overflow-x: scroll;
+    height: ${({ headerHeight }) => `calc(100vh - ${headerHeight * 1.5}px)`};
+  }
+`;
 const Row = styled.div`
   display: flex;
   width: 100%;
+  @media (max-width: 1280px) {
+    flex-direction: column;
+  }
 `;
 const TitleRow = styled.div`
   display: flex;

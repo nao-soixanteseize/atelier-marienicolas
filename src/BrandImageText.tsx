@@ -21,7 +21,7 @@ export const BrandImageText: FunctionComponent<TestimonialProps> = ({
       <HoverContainer>
         <MainImageContainer image={image} hoverImage={hoverImage} />
       </HoverContainer>
-      <TestimonialContent>
+      <TextBlock>
         <Text>
           <TitleContent>{title}</TitleContent>
           <TextContent>
@@ -30,7 +30,7 @@ export const BrandImageText: FunctionComponent<TestimonialProps> = ({
             }
           </TextContent>
         </Text>
-      </TestimonialContent>
+      </TextBlock>
     </Container>
   );
 };
@@ -41,6 +41,9 @@ const Container = styled.div`
   gap: 0px;
   width: 100%;
   height: 100%;
+  @media (max-width: 1280px) {
+    flex-direction: column;
+  }
 `;
 const TextContent = styled.div`
   color: #888;
@@ -50,17 +53,29 @@ const TextContent = styled.div`
 `;
 const TitleContent = styled.div`
   font-family: 'Wix Madefor Display', sans-serif;
-  /* font-weight: bold; */
   font-size: 18px;
   margin-bottom: 18px;
 `;
-const TestimonialContent = styled.div`
+const TextBlock = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-color: black;
+  border-width: 0;
+  border-right-width: 0.5px;
+  border-style: solid;
+
+  @media (max-width: 1280px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-right-width: 0;
+  }
 `;
 const Text = styled.div`
   max-width: 50%;
+  @media (max-width: 1280px) {
+    max-width: 100%;
+  }
 `;
