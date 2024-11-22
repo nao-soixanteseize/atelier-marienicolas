@@ -40,7 +40,7 @@ export const MainImageContainer: FunctionComponent<MainImageContainerProps> = ({
       onHoverEnd={() => setHover(false)}
       transition={{ duration: 1 }}
     >
-      <Img hover={hover} src={image} />
+      <Img $hover={hover} src={image} />
       {hoverImage && (
         <AnimatePresence>
           {hover && (
@@ -68,11 +68,11 @@ export const MainImageContainer: FunctionComponent<MainImageContainerProps> = ({
   );
 };
 
-const Img = styled.img<{ hover: boolean }>`
+const Img = styled.img<{ $hover: boolean }>`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* mix-blend-mode: ${({ hover }) => (hover ? 'luminosity' : 'unset')}; */
+  /* mix-blend-mode: ${({ $hover }) => ($hover ? 'luminosity' : 'unset')}; */
 `;
 const HoverImg = styled.img`
   position: absolute;

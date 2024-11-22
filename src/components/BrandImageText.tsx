@@ -8,6 +8,7 @@ interface TestimonialProps {
   image: any;
   hoverImage?: any;
   title: string;
+  text: string;
 }
 
 export const BrandImageText: FunctionComponent<TestimonialProps> = ({
@@ -15,6 +16,7 @@ export const BrandImageText: FunctionComponent<TestimonialProps> = ({
   image,
   hoverImage,
   title,
+  text,
 }) => {
   return (
     <Container style={style}>
@@ -24,11 +26,7 @@ export const BrandImageText: FunctionComponent<TestimonialProps> = ({
       <TextBlock>
         <Text>
           <TitleContent>{title}</TitleContent>
-          <TextContent>
-            {
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.'
-            }
-          </TextContent>
+          <TextContent>{text}</TextContent>
         </Text>
       </TextBlock>
     </Container>
