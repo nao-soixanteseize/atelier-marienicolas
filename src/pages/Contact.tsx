@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import '../App.css';
 import ContactForm from '../components/ContactForm';
 import { Layout } from '../components/Layout';
+import { useWindowSize } from '../hooks/useWindowSize';
 
 const Catalogue = () => {
   const paddingRow3 = 40;
+  const { device } = useWindowSize();
+  const [messageSent, setMessageSent] = useState(false);
 
   return (
     <Layout>
@@ -27,9 +31,13 @@ const Catalogue = () => {
           alignItems: 'center',
         }}
       >
-        <div style={{ width: '60%' }}>
-          <ContactForm />
-        </div>
+        {messageSent ? (
+          <ContentText>{'Votre message a bien été envoyé. Merci.'}</ContentText>
+        ) : (
+          <div style={{ width: device === 'mobile' ? '100%' : '60%' }}>
+            <ContactForm setMessageSent={setMessageSent} page={'ContactPage'} />
+          </div>
+        )}
       </Row>
     </Layout>
   );

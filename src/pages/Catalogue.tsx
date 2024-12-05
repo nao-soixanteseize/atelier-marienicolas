@@ -1,19 +1,24 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import '../App.css';
 import { BrandImage } from '../components/BrandImage';
 import Button from '../components/Button';
 import ContactForm from '../components/ContactForm';
 import { Layout } from '../components/Layout';
+import { useWindowSize } from '../hooks/useWindowSize';
 import MountainLineImage from '../img/MountainLine.png';
 import { serie1, serie2, serie3, unique1, unique2, unique3 } from '../products';
 
 const Catalogue = () => {
+  const { device } = useWindowSize();
+  const [messageSent, setMessageSent] = useState(false);
+
   const handleDownload = () => {
     // URL du fichier à télécharger
     const fileUrl = '/Catalogue.pdf'; // Remplacez par le chemin réel du fichier
     const link = document.createElement('a');
     link.href = fileUrl;
-    link.download = 'Catalogue-MarieNicolas-2025.pdf'; // Nom du fichier après téléchargement
+    link.download = 'Catalogue-MarieNicolas-Dec25.pdf'; // Nom du fichier après téléchargement
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link); // Nettoyage
@@ -115,9 +120,13 @@ const Catalogue = () => {
           alignItems: 'center',
         }}
       >
-        <div style={{ width: '60%' }}>
-          <ContactForm />
-        </div>
+        {messageSent ? (
+          <ContentText>{'Votre message a bien été envoyé. Merci.'}</ContentText>
+        ) : (
+          <div style={{ width: device === 'mobile' ? '100%' : '60%' }}>
+            <ContactForm setMessageSent={setMessageSent} page={'CatalogPage'} />
+          </div>
+        )}
       </Row>
     </Layout>
   );

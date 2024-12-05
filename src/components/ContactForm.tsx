@@ -1,19 +1,65 @@
+import axios from 'axios';
+import { useState } from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 
-const ContactForm = () => {
+const ContactForm = ({ setMessageSent, page }: any) => {
+  //////////////////////////////////////////// GETFORM STATE
+
+  const [serverState, setServerState] = useState<{
+    submitting: boolean;
+    status: { ok: string; msg: string } | undefined;
+  }>({
+    submitting: false,
+    status: undefined,
+  });
+  const handleServerResponse = (
+    ok: any,
+    msg: string,
+    form: { reset: () => void },
+  ) => {
+    setServerState({
+      submitting: false,
+      status: { ok, msg },
+    });
+    if (ok) {
+      form.reset();
+      setMessageSent(true);
+    }
+  };
+
+  const handleOnSubmit = async (e: {
+    preventDefault: () => void;
+    target: any;
+  }) => {
+    e.preventDefault();
+    const form = e.target;
+    setServerState({ submitting: true, status: undefined });
+    //const token = await recaptchaRef.current.executeAsync();
+    // console.log(token);
+
+    // console.log(new FormData(form));
+    axios({
+      method: 'post',
+      url: 'https://getform.io/f/avrrpxda',
+      data: new FormData(form),
+    })
+      .then((r: any) => {
+        handleServerResponse(true, 'Thanks!', form);
+      })
+      .catch((r: any) => {
+        handleServerResponse(false, r.response.data.error, form);
+      });
+  };
+
   return (
     <FormContainer>
-      <form
-        name="CONTACT_FORM"
-        method="post"
-        onSubmit={() => console.log('SEND')}
-      >
+      <form name="CONTACT_FORM" method="post" onSubmit={handleOnSubmit}>
         <FormRow>
           <Input
             style={{ display: 'none' }}
             className={`form-control`}
-            defaultValue={'contact'}
+            defaultValue={page}
             type="text"
             name="Landing"
             required={true}
@@ -71,12 +117,8 @@ const ContactForm = () => {
               className={`form-control`}
             >
               <option value="">Choisissez une option_</option>
-              <option value="ANNONCEUR">UN ANNONCEUR</option>
-              <option value="AGENCE DE COMMUNICATION">UNE AGENCE</option>
-              <option value="INVESTISSEUR">UN INVESTISSEUR</option>
-              <option value="PRESTATAIRE">UN PRESTATAIRE</option>
-              <option value="INDÉPENDANT">UN INDÉPENDANT</option>
-              <option value="ÉTUDIANT">UN ÉTUDIANT</option>
+              <option value="UN PARTICULIER">UN PARTICULIER</option>
+              <option value="UNE ENTREPRISE">UNE ENTREPRISE</option>
               <option value="AUTRE">AUTRE</option>
             </Select>
           </InputContainer>
@@ -94,7 +136,9 @@ const ContactForm = () => {
         </TextAreaContainer>
 
         <ButtonRow>
-          <Button type="submit">ENVOYER</Button>
+          <Button type="submit" loading={serverState.submitting}>
+            ENVOYER
+          </Button>
         </ButtonRow>
       </form>
     </FormContainer>
@@ -111,6 +155,7 @@ const FormContainer = styled.div`
   @media (max-width: 1280px) {
     max-width: 100vw;
     margin: 0px 0 20px 0;
+    /* background-color: #2f2424; */
   }
 `;
 const FormRow = styled.div`
@@ -120,7 +165,7 @@ const FormRow = styled.div`
   align-items: flex-start;
   @media (max-width: 1280px) {
     flex-direction: column;
-    width: calc((var(--vw, 1vw) * 100) - 100px);
+    width: calc((var(--vw, 1vw) * 100));
   }
 `;
 const InputContainer = styled.div`
@@ -128,8 +173,7 @@ const InputContainer = styled.div`
   background-color: #fff;
   padding: 20px 20px 10px 20px;
   @media (max-width: 1280px) {
-    width: calc((var(--vw, 1vw) * 100) - 90px);
-    margin: 0px 0 16px 30px;
+    width: calc((var(--vw, 1vw) * 100));
     padding: 15px;
   }
 `;
@@ -145,12 +189,13 @@ const Input = styled.input`
   background-color: #eee;
   font-family: 'HelveticaNeueLTPro-Bd';
   font-size: 20px;
-  color: #66ccff;
+  color: #000000;
+  padding: 0 20px;
   :focus {
     outline: none;
   }
   @media (max-width: 1280px) {
-    width: calc((var(--vw, 1vw) * 100) - 110px);
+    width: calc((var(--vw, 1vw) * 100) - 35px);
   }
 `;
 const Select = styled.select`
@@ -164,18 +209,18 @@ const Select = styled.select`
   margin: 0px 0 0 -3px;
   padding: 20px;
   @media (max-width: 1280px) {
-    width: calc((var(--vw, 1vw) * 100) - 90px);
+    width: calc((var(--vw, 1vw) * 100) - 30px);
     margin: 0px 0 0 0;
   }
 `;
 
 const TextAreaContainer = styled.div`
   background-color: #fff;
-  margin: 0px 20px 16px 0;
   padding: 20px 20px 10px 20px;
   @media (max-width: 1280px) {
-    width: calc((var(--vw, 1vw) * 100) - 100px);
-    margin: 0px 0 16px 30px;
+    width: calc((var(--vw, 1vw) * 100) - 35px);
+    padding: 15px;
+    margin: 0;
   }
 `;
 const TextArea = styled.textarea`
@@ -183,15 +228,17 @@ const TextArea = styled.textarea`
   width: 100%;
   border-width: 0;
   background-color: #eee;
-  color: #66ccff;
+  color: #000000;
   font-family: 'HelveticaNeueLTPro-Bd';
   font-size: 18px;
   margin: 5px 0 0 -3px;
+  padding: 20px;
+
   :focus {
     outline: none;
   }
   @media (max-width: 1280px) {
-    width: calc((var(--vw, 1vw) * 100) - 120px);
+    width: calc((var(--vw, 1vw) * 100) - 30px);
   }
 `;
 
@@ -203,7 +250,8 @@ const ButtonRow = styled.div`
   margin-top: 40px;
   width: 100%;
   @media (max-width: 1280px) {
-    width: calc((var(--vw, 1vw) * 100));
+    width: calc((var(--vw, 1vw) * 100)-30px);
     justify-content: center;
+    padding: 0 15px;
   }
 `;

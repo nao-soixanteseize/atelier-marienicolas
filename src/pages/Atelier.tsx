@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import '../App.css';
 import { BrandImage } from '../components/BrandImage';
@@ -6,13 +7,12 @@ import ContactForm from '../components/ContactForm';
 import HeaderCarousel from '../components/HeaderCarousel';
 import { Layout } from '../components/Layout';
 import { useWindowSize } from '../hooks/useWindowSize';
-import MountainLineImage from '../img/MountainLine.png';
 import PortraitImage from '../img/Portrait1.png';
 import { serie1, serie2, serie3, unique1, unique2, unique3 } from '../products';
 
 const Atelier = () => {
   const { device } = useWindowSize();
-
+  const [messageSent, setMessageSent] = useState(false);
   const paddingRow2 = device === 'mobile' ? 40 : device === 'tablet' ? 80 : 200;
   const paddingRow3 = 40;
 
@@ -68,7 +68,7 @@ const Atelier = () => {
               name={piece.name}
               description={piece.description}
               size={piece.size}
-              hoverImage={MountainLineImage}
+              hoverImage={piece.image_over}
             />
           ))}
         </Content>
@@ -88,7 +88,7 @@ const Atelier = () => {
               name={piece.name}
               description={piece.description}
               size={piece.size}
-              hoverImage={MountainLineImage}
+              hoverImage={piece.image_over}
             />
           ))}
         </Content>
@@ -108,7 +108,7 @@ const Atelier = () => {
               name={piece.name}
               description={piece.description}
               size={piece.size}
-              hoverImage={MountainLineImage}
+              hoverImage={piece.image_over}
             />
           ))}
         </Content>
@@ -148,7 +148,7 @@ const Atelier = () => {
               name={piece.name}
               description={piece.description}
               size={piece.size}
-              hoverImage={MountainLineImage}
+              hoverImage={piece.image_over}
             />
           ))}
         </Content>
@@ -168,7 +168,7 @@ const Atelier = () => {
               name={piece.name}
               description={piece.description}
               size={piece.size}
-              hoverImage={MountainLineImage}
+              hoverImage={piece.image_over}
             />
           ))}
         </Content>
@@ -188,7 +188,7 @@ const Atelier = () => {
               name={piece.name}
               description={piece.description}
               size={piece.size}
-              hoverImage={MountainLineImage}
+              hoverImage={piece.image_over}
             />
           ))}
         </Content>
@@ -213,9 +213,13 @@ const Atelier = () => {
           alignItems: 'center',
         }}
       >
-        <div style={{ width: '60%' }}>
-          <ContactForm />
-        </div>
+        {messageSent ? (
+          <ContentText>{'Votre message a bien été envoyé. Merci.'}</ContentText>
+        ) : (
+          <div style={{ width: device === 'mobile' ? '100%' : '60%' }}>
+            <ContactForm setMessageSent={setMessageSent} page={'HomePage'} />
+          </div>
+        )}
       </Row>
     </Layout>
   );

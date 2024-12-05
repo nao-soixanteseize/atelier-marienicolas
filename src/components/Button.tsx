@@ -5,20 +5,25 @@ interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
+  loading?: boolean;
 }
 
-const Button = ({ children, onClick, type }: ButtonProps) => {
+const Button = ({ children, onClick, type, loading }: ButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <ButtonContainer
       $isHovered={isHovered}
-      onClick={onClick}
+      onClick={() => {
+        if (!loading && onClick) onClick();
+      }}
       type={type}
-      onMouseEnter={() => setIsHovered(true)}
+      onMouseEnter={() => {
+        if (!loading) setIsHovered(true);
+      }}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {children}
+      {loading ? 'Envoi en cours...' : children}
     </ButtonContainer>
   );
 };
