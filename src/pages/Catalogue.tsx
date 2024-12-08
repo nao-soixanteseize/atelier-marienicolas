@@ -6,7 +6,6 @@ import Button from '../components/Button';
 import ContactForm from '../components/ContactForm';
 import { Layout } from '../components/Layout';
 import { useWindowSize } from '../hooks/useWindowSize';
-import MountainLineImage from '../img/MountainLine.png';
 import { serie1, serie2, serie3, unique1, unique2, unique3 } from '../products';
 
 const Catalogue = () => {
@@ -18,7 +17,7 @@ const Catalogue = () => {
     const fileUrl = '/Catalogue.pdf'; // Remplacez par le chemin réel du fichier
     const link = document.createElement('a');
     link.href = fileUrl;
-    link.download = 'Catalogue-MarieNicolas-Dec25.pdf'; // Nom du fichier après téléchargement
+    link.download = 'Catalogue-MarieNicolas-Dec24.pdf'; // Nom du fichier après téléchargement
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link); // Nettoyage
@@ -36,10 +35,169 @@ const Catalogue = () => {
           marginBottom: 60,
         }}
       >
-        <Button onClick={handleDownload}>{'TÉLÉCHARGER .PDF'}</Button>
+        <Button onClick={handleDownload}>{'TÉLÉCHARGER LE CATALOGUE'}</Button>
       </Row>
 
       <TitleRow
+        style={{
+          width: `calc(100vw - ${paddingRow3 * 2}px)`,
+          paddingBottom: paddingRow3 - 5,
+          marginLeft: paddingRow3,
+          marginRight: paddingRow3,
+        }}
+      >
+        <ContentText>{'PIÉCES UNIQUES'}</ContentText>
+      </TitleRow>
+
+      <Row
+        style={{
+          padding: paddingRow3,
+          width: `calc(100vw - ${paddingRow3 * 2}px)`,
+          gap: 40,
+        }}
+      >
+        <Content style={{ gap: 40 }}>
+          {unique1.map((piece, index) => (
+            <BrandImage
+              key={index}
+              image={piece.image}
+              height={
+                device === 'mobile'
+                  ? '100%'
+                  : device === 'tablet'
+                  ? '100%'
+                  : piece.height
+              }
+              name={piece.name}
+              description={piece.description}
+              size={piece.size}
+              // hoverImage={piece.image_over}
+            />
+          ))}
+        </Content>
+
+        <Content style={{ gap: 40 }}>
+          {unique2.map((piece, index) => (
+            <BrandImage
+              key={index}
+              image={piece.image}
+              height={
+                device === 'mobile'
+                  ? '100%'
+                  : device === 'tablet'
+                  ? '100%'
+                  : piece.height
+              }
+              name={piece.name}
+              description={piece.description}
+              size={piece.size}
+              // hoverImage={piece.image_over}
+            />
+          ))}
+        </Content>
+
+        <Content style={{ gap: 40 }}>
+          {unique3.map((piece, index) => (
+            <BrandImage
+              key={index}
+              image={piece.image}
+              height={
+                device === 'mobile'
+                  ? '100%'
+                  : device === 'tablet'
+                  ? '100%'
+                  : piece.height
+              }
+              name={piece.name}
+              description={piece.description}
+              size={piece.size}
+              // hoverImage={piece.image_over}
+            />
+          ))}
+        </Content>
+      </Row>
+
+      <TitleRow
+        style={{
+          width: `calc(100vw - ${paddingRow3 * 2}px)`,
+          paddingBottom: paddingRow3 - 5,
+          marginLeft: paddingRow3,
+          marginRight: paddingRow3,
+          marginTop: 80,
+        }}
+      >
+        <ContentText>{'MINI SÉRIES'}</ContentText>
+      </TitleRow>
+
+      <Row
+        style={{
+          padding: paddingRow3,
+          width: `calc(100vw - ${paddingRow3 * 2}px)`,
+          gap: 40,
+        }}
+      >
+        <Content style={{ gap: 40 }}>
+          {serie1.map((piece, index) => (
+            <BrandImage
+              key={index}
+              image={piece.image}
+              height={
+                device === 'mobile'
+                  ? '100%'
+                  : device === 'tablet'
+                  ? '100%'
+                  : piece.height
+              }
+              name={piece.name}
+              description={piece.description}
+              size={piece.size}
+              // hoverImage={piece.image_over}
+            />
+          ))}
+        </Content>
+
+        <Content style={{ gap: 40 }}>
+          {serie2.map((piece, index) => (
+            <BrandImage
+              key={index}
+              image={piece.image}
+              height={
+                device === 'mobile'
+                  ? '100%'
+                  : device === 'tablet'
+                  ? '100%'
+                  : piece.height
+              }
+              name={piece.name}
+              description={piece.description}
+              size={piece.size}
+              // hoverImage={piece.image_over}
+            />
+          ))}
+        </Content>
+
+        <Content style={{ gap: 40 }}>
+          {serie3.map((piece, index) => (
+            <BrandImage
+              key={index}
+              image={piece.image}
+              height={
+                device === 'mobile'
+                  ? '100%'
+                  : device === 'tablet'
+                  ? '100%'
+                  : piece.height
+              }
+              name={piece.name}
+              description={piece.description}
+              size={piece.size}
+              // hoverImage={piece.image_over}
+            />
+          ))}
+        </Content>
+      </Row>
+
+      {/* <TitleRow
         style={{
           width: `calc(100vw - ${paddingRow3 * 2}px)`,
           paddingBottom: paddingRow3 - 5,
@@ -61,7 +219,7 @@ const Catalogue = () => {
           <BrandImage
             key={index}
             image={piece.image}
-            height={'100%'}
+            height={piece.height}
             name={piece.name}
             description={piece.description}
             size={piece.size}
@@ -92,14 +250,14 @@ const Catalogue = () => {
           <BrandImage
             key={index}
             image={piece.image}
-            height={'100%'}
+            height={piece.height}
             name={piece.name}
             description={piece.description}
             size={piece.size}
             hoverImage={MountainLineImage}
           />
         ))}
-      </Grid>
+      </Grid> */}
 
       <TitleRow
         style={{
@@ -156,6 +314,14 @@ const TitleRow = styled.div`
 
   justify-content: center;
 `;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+`;
+
 const ContentText = styled.div`
   font-family: 'Wix Madefor Display', sans-serif;
   font-size: 16px;

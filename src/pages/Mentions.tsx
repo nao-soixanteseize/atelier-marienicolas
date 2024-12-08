@@ -20,10 +20,9 @@ const Mentions = () => {
         <BrandImageText
           title={'Mentions légales'}
           image={PortraitImage}
-          text={`21 rue des filles du calvaire 75003 Paris France\n
-RCS : 439 300 393 RCS Paris\n
-TVA Intracom. : FR 21439300393\n
-Publisher : Nao Nussbaum\n
+          text={`44 bis rue de l'Ourcq 75019 Paris France\n
+Siret : 51105691300037\n
+Publisher : Marie Nicolas\n
 Conception : SoixanteSeize`}
         />
       </Row>

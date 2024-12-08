@@ -17,7 +17,7 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
         <MenuRow>
           <MenuItem title="ATELIER" url="/" />
           <MenuSeparator>{'|'}</MenuSeparator>
-          <MenuItem title="CATALOGUE" url="/catalogue" />
+          <MenuItem title="GALERIE" url="/galerie" />
           <MenuSeparator>{'|'}</MenuSeparator>
           <MenuItem title="CONTACT" url="/contact" />
         </MenuRow>

@@ -18,6 +18,7 @@ export const BrandImageText: FunctionComponent<TestimonialProps> = ({
   title,
   text,
 }) => {
+  const textDisplay = text.split('\n');
   return (
     <Container style={style}>
       <HoverContainer>
@@ -26,7 +27,9 @@ export const BrandImageText: FunctionComponent<TestimonialProps> = ({
       <TextBlock>
         <Text>
           <TitleContent>{title}</TitleContent>
-          <TextContent>{text}</TextContent>
+          {textDisplay.map((text, index) => (
+            <TextContent key={index}>{text}</TextContent>
+          ))}
         </Text>
       </TextBlock>
     </Container>
