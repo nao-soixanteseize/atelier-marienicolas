@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import '../App.css';
 import { BrandImageText } from '../components/BrandImageText';
+import ContactForm from '../components/ContactForm';
 import HeaderCarousel from '../components/HeaderCarousel';
 import { Layout } from '../components/Layout';
 import { useWindowSize } from '../hooks/useWindowSize';
@@ -32,7 +33,7 @@ const Atelier = () => {
         />
       </Row>
 
-      {/*  <TitleRow
+      <TitleRow
         style={{
           marginTop: 80,
           marginBottom: 40,
@@ -58,7 +59,7 @@ const Atelier = () => {
             <ContactForm setMessageSent={setMessageSent} page={'HomePage'} />
           </div>
         )}
-      </Row> */}
+      </Row>
     </Layout>
   );
 };

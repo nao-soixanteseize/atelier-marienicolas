@@ -292,11 +292,11 @@ const Catalogue = () => {
 
 export default Catalogue;
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 40px;
-`;
+// const Grid = styled.div`
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+//   gap: 40px;
+// `;
 const Row = styled.div`
   display: flex;
   width: 100%;

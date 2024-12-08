@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { useWindowSize } from '../hooks/useWindowSize';
 import Header1 from '../img/H1.jpg';
 import Header2 from '../img/H2.jpg';
+import Header3 from '../img/H3.jpg';
+import Header4 from '../img/H4.jpg';
+import Header5 from '../img/H5.jpg';
 import MountainLineImage from '../img/MountainLine.png';
 import { BrandImage } from './BrandImage';
 
@@ -14,6 +17,9 @@ const HeaderCarousel = () => {
   const images = [
     { image: Header1, hoverImage: MountainLineImage },
     { image: Header2, hoverImage: MountainLineImage },
+    { image: Header3, hoverImage: MountainLineImage },
+    { image: Header4, hoverImage: MountainLineImage },
+    { image: Header5, hoverImage: MountainLineImage },
   ];
 
   // Timer pour faire défiler automatiquement les images
