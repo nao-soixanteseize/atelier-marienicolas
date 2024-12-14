@@ -98,7 +98,7 @@ const Welcome = styled.div<{ $headerHeight: number }>`
   width: calc(100vw);
   height: ${({ $headerHeight }) => `calc(100vh - ${$headerHeight}px)`};
   overflow: hidden;
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     overflow-x: scroll;
     height: ${({ $headerHeight }) => `calc(100vh - ${$headerHeight}px)`};
   }

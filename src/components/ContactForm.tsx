@@ -149,11 +149,10 @@ export default ContactForm;
 
 //FORM
 const FormContainer = styled.div`
-  max-width: 1280px;
+  max-width: 1180px;
   margin: auto;
   margin-bottom: 40px;
-  @media (max-width: 1280px) {
-    max-width: 100vw;
+  @media (max-width: 1180px) {
     margin: 0px 0 20px 0;
     /* background-color: #2f2424; */
   }
@@ -163,7 +162,7 @@ const FormRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     flex-direction: column;
     width: calc((var(--vw, 1vw) * 100));
   }
@@ -172,7 +171,7 @@ const InputContainer = styled.div`
   width: calc(var(--vw, 1vw) * 100);
   background-color: #fff;
   padding: 20px 20px 10px 20px;
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     width: calc((var(--vw, 1vw) * 100));
     padding: 15px;
   }
@@ -194,7 +193,7 @@ const Input = styled.input`
   :focus {
     outline: none;
   }
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     width: calc((var(--vw, 1vw) * 100) - 70px);
   }
 `;
@@ -208,7 +207,7 @@ const Select = styled.select`
   font-size: 18px;
   margin: 0px 0 0 -3px;
   padding: 20px;
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     width: calc((var(--vw, 1vw) * 100) - 30px);
     margin: 0px 0 0 0;
   }
@@ -217,7 +216,7 @@ const Select = styled.select`
 const TextAreaContainer = styled.div`
   background-color: #fff;
   padding: 20px 20px 10px 20px;
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     width: calc((var(--vw, 1vw) * 100) - 35px);
     padding: 15px;
     margin: 0;
@@ -237,7 +236,7 @@ const TextArea = styled.textarea`
   :focus {
     outline: none;
   }
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     width: calc((var(--vw, 1vw) * 100) - 70px);
   }
 `;
@@ -249,7 +248,7 @@ const ButtonRow = styled.div`
   justify-content: center;
   margin-top: 40px;
   width: 100%;
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     width: calc((var(--vw, 1vw) * 100)-30px);
     justify-content: center;
     padding: 0 15px;

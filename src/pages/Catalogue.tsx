@@ -166,7 +166,12 @@ const Catalogue = () => {
         {messageSent ? (
           <ContentText>{'Votre message a bien été envoyé. Merci.'}</ContentText>
         ) : (
-          <div style={{ width: device === 'mobile' ? '100%' : '60%' }}>
+          <div
+            style={{
+              width:
+                device === 'mobile' || device === 'tablet' ? '100%' : '60%',
+            }}
+          >
             <ContactForm setMessageSent={setMessageSent} page={'CatalogPage'} />
           </div>
         )}

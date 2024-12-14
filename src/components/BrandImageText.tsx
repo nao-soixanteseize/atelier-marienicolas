@@ -42,7 +42,7 @@ const Container = styled.div`
   gap: 0px;
   width: 100%;
   height: 100%;
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     flex-direction: column;
   }
 `;
@@ -68,7 +68,7 @@ const TextBlock = styled.div`
   border-right-width: 0.5px;
   border-style: solid;
 
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     padding-top: 40px;
     padding-bottom: 40px;
     border-right-width: 0;
@@ -76,7 +76,7 @@ const TextBlock = styled.div`
 `;
 const Text = styled.div`
   max-width: 75%;
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     max-width: 100%;
   }
 `;

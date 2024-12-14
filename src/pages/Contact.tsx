@@ -10,6 +10,7 @@ const Catalogue = () => {
   const { device } = useWindowSize();
   const [messageSent, setMessageSent] = useState(false);
 
+  console.log('Device', device);
   return (
     <Layout>
       <TitleRow
@@ -34,7 +35,12 @@ const Catalogue = () => {
         {messageSent ? (
           <ContentText>{'Votre message a bien été envoyé. Merci.'}</ContentText>
         ) : (
-          <div style={{ width: device === 'mobile' ? '100%' : '60%' }}>
+          <div
+            style={{
+              width:
+                device === 'mobile' || device === 'tablet' ? '100%' : '60%',
+            }}
+          >
             <ContactForm setMessageSent={setMessageSent} page={'ContactPage'} />
           </div>
         )}
@@ -48,7 +54,7 @@ export default Catalogue;
 const Row = styled.div`
   display: flex;
   width: 100%;
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     flex-direction: column;
   }
 `;

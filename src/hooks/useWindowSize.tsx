@@ -20,9 +20,9 @@ export const useWindowSize = () => {
         width: window.innerWidth,
         height: window.innerHeight,
       });
-      if (window.innerWidth < 819) {
+      if (window.innerWidth < 820) {
         setDevice('mobile');
-      } else if (window.innerWidth < 1179) {
+      } else if (window.innerWidth < 1180) {
         setDevice('tablet');
       } else {
         setDevice('desktop');

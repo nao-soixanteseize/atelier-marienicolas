@@ -35,7 +35,7 @@ export default Mentions;
 const Row = styled.div`
   display: flex;
   width: 100%;
-  @media (max-width: 1280px) {
+  @media (max-width: 1180px) {
     flex-direction: column;
   }
 `;
