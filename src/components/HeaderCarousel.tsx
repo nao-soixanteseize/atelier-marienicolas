@@ -32,9 +32,9 @@ const HeaderCarousel = () => {
   }, [images.length]);
 
   // Gestionnaire pour changer l'image via les indicateurs
-  const handleIndicatorClick = (index: number) => {
-    setActiveIndex(index);
-  };
+  // const handleIndicatorClick = (index: number) => {
+  //   setActiveIndex(index);
+  // };
 
   return (
     <Welcome $headerHeight={headerHeight}>
