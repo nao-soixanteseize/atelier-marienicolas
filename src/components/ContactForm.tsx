@@ -195,7 +195,7 @@ const Input = styled.input`
     outline: none;
   }
   @media (max-width: 1280px) {
-    width: calc((var(--vw, 1vw) * 100) - 35px);
+    width: calc((var(--vw, 1vw) * 100) - 70px);
   }
 `;
 const Select = styled.select`
@@ -238,7 +238,7 @@ const TextArea = styled.textarea`
     outline: none;
   }
   @media (max-width: 1280px) {
-    width: calc((var(--vw, 1vw) * 100) - 30px);
+    width: calc((var(--vw, 1vw) * 100) - 70px);
   }
 `;
 

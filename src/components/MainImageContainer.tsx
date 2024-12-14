@@ -6,7 +6,7 @@ interface MainImageContainerProps {
   image: any;
   hoverImage?: any;
   hoverImageStyle?: any;
-  height?: string;
+  height?: number;
 }
 
 export const MainImageContainer: FunctionComponent<MainImageContainerProps> = ({

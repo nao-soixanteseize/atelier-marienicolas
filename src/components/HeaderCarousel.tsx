@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useWindowSize } from '../hooks/useWindowSize';
 import Header1 from '../img/H1.jpg';
-import Header2 from '../img/H2.jpg';
-import Header3 from '../img/H3.jpg';
-import Header4 from '../img/H4.jpg';
-import Header5 from '../img/H5.jpg';
+import HeaderMobile1 from '../img/H1mobile.jpg';
 import MountainLineImage from '../img/MountainLine.png';
 import { BrandImage } from './BrandImage';
 
@@ -14,13 +11,16 @@ const HeaderCarousel = () => {
   const { windowSize } = useWindowSize();
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const images = [
-    { image: Header1, hoverImage: MountainLineImage },
-    { image: Header2, hoverImage: MountainLineImage },
+  const images =
+    windowSize.width < 1280
+      ? [{ image: HeaderMobile1, hoverImage: MountainLineImage }]
+      : [
+          { image: Header1, hoverImage: MountainLineImage },
+          /*     { image: Header2, hoverImage: MountainLineImage },
     { image: Header3, hoverImage: MountainLineImage },
     { image: Header4, hoverImage: MountainLineImage },
-    { image: Header5, hoverImage: MountainLineImage },
-  ];
+    { image: Header5, hoverImage: MountainLineImage }, */
+        ];
 
   // Timer pour faire défiler automatiquement les images
   useEffect(() => {
@@ -53,12 +53,12 @@ const HeaderCarousel = () => {
               width: windowSize.width,
             }}
             image={item.image}
-            hoverImage={item.hoverImage}
+            // hoverImage={item.hoverImage}
           />
         ))}
       </div>
       {/* Step indicators */}
-      <div
+      {/* <div
         style={{
           position: 'absolute',
           bottom: '20px',
@@ -84,7 +84,7 @@ const HeaderCarousel = () => {
             }}
           />
         ))}
-      </div>
+      </div> */}
     </Welcome>
   );
 };
@@ -97,9 +97,9 @@ const Welcome = styled.div<{ $headerHeight: number }>`
   padding: 0;
   width: calc(100vw);
   height: ${({ $headerHeight }) => `calc(100vh - ${$headerHeight}px)`};
-  overflow-y: hidden;
+  overflow: hidden;
   @media (max-width: 1280px) {
     overflow-x: scroll;
-    height: ${({ $headerHeight }) => `calc(100vh - ${$headerHeight * 1.5}px)`};
+    height: ${({ $headerHeight }) => `calc(100vh - ${$headerHeight}px)`};
   }
 `;

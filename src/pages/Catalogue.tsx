@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Masonry from 'react-masonry-css';
 import styled from 'styled-components';
 import '../App.css';
 import { BrandImage } from '../components/BrandImage';
@@ -6,10 +7,10 @@ import Button from '../components/Button';
 import ContactForm from '../components/ContactForm';
 import { Layout } from '../components/Layout';
 import { useWindowSize } from '../hooks/useWindowSize';
-import { serie1, serie2, serie3, unique1, unique2, unique3 } from '../products';
+import { serie, unique } from '../products';
 
 const Catalogue = () => {
-  const { device } = useWindowSize();
+  const { device, windowSize } = useWindowSize();
   const [messageSent, setMessageSent] = useState(false);
 
   const handleDownload = () => {
@@ -23,7 +24,29 @@ const Catalogue = () => {
     document.body.removeChild(link); // Nettoyage
   };
 
-  const paddingRow3 = 40;
+  const paddingRow3 = device === 'mobile' ? 20 : 40;
+
+  // Configuration des colonnes pour la disposition Masonry
+  const breakpointColumns = {
+    default: 3, // 3 colonnes par défaut
+    1179: 2, // 2 colonnes si la largeur de l'écran < 1100px
+    819: 1, // 1 colonne si la largeur de l'écran < 700px
+  };
+
+  // const paddingRow2 = device === 'mobile' ? 40 : device === 'tablet' ? 80 : 200;
+
+  const imageWidth = Math.floor(
+    device === 'mobile'
+      ? windowSize.width - paddingRow3 * 2
+      : device === 'tablet'
+      ? (windowSize.width - paddingRow3 * 3) / 2
+      : device === 'desktop'
+      ? (windowSize.width - paddingRow3 * 4) / 3
+      : 100,
+  );
+
+  console.log('Width', windowSize.width);
+  console.log('Image width', imageWidth);
 
   return (
     <Layout>
@@ -35,7 +58,7 @@ const Catalogue = () => {
           marginBottom: 60,
         }}
       >
-        <Button onClick={handleDownload}>{'TÉLÉCHARGER LE CATALOGUE'}</Button>
+        <Button onClick={handleDownload}>{`TÉLÉCHARGER\nLE CATALOGUE`}</Button>
       </Row>
 
       <TitleRow
@@ -49,73 +72,35 @@ const Catalogue = () => {
         <ContentText>{'PIÉCES UNIQUES'}</ContentText>
       </TitleRow>
 
-      <Row
+      <Masonry
+        breakpointCols={breakpointColumns}
+        className="masonry-grid"
         style={{
-          padding: paddingRow3,
-          width: `calc(100vw - ${paddingRow3 * 2}px)`,
+          display: 'flex',
+          marginLeft: '-20px', // Espacement négatif pour compenser le padding
           gap: 40,
+          margin: paddingRow3, // Marges autour de la galerie
         }}
       >
-        <Content style={{ gap: 40 }}>
-          {unique1.map((piece, index) => (
+        {unique.map((piece, key) => (
+          <div
+            key={key}
+            style={{
+              marginBottom: paddingRow3, // Espacement vertical entre les items
+              // overflow: 'hidden',
+            }}
+          >
             <BrandImage
-              key={index}
               image={piece.image}
-              height={
-                device === 'mobile'
-                  ? '100%'
-                  : device === 'tablet'
-                  ? '100%'
-                  : piece.height
-              }
+              height={imageWidth * piece.ratio}
               name={piece.name}
-              description={piece.description}
+              // description={piece.description}
               size={piece.size}
               // hoverImage={piece.image_over}
             />
-          ))}
-        </Content>
-
-        <Content style={{ gap: 40 }}>
-          {unique2.map((piece, index) => (
-            <BrandImage
-              key={index}
-              image={piece.image}
-              height={
-                device === 'mobile'
-                  ? '100%'
-                  : device === 'tablet'
-                  ? '100%'
-                  : piece.height
-              }
-              name={piece.name}
-              description={piece.description}
-              size={piece.size}
-              // hoverImage={piece.image_over}
-            />
-          ))}
-        </Content>
-
-        <Content style={{ gap: 40 }}>
-          {unique3.map((piece, index) => (
-            <BrandImage
-              key={index}
-              image={piece.image}
-              height={
-                device === 'mobile'
-                  ? '100%'
-                  : device === 'tablet'
-                  ? '100%'
-                  : piece.height
-              }
-              name={piece.name}
-              description={piece.description}
-              size={piece.size}
-              // hoverImage={piece.image_over}
-            />
-          ))}
-        </Content>
-      </Row>
+          </div>
+        ))}
+      </Masonry>
 
       <TitleRow
         style={{
@@ -129,135 +114,35 @@ const Catalogue = () => {
         <ContentText>{'MINI SÉRIES'}</ContentText>
       </TitleRow>
 
-      <Row
+      <Masonry
+        breakpointCols={breakpointColumns}
+        className="masonry-grid"
         style={{
-          padding: paddingRow3,
-          width: `calc(100vw - ${paddingRow3 * 2}px)`,
+          display: 'flex',
+          marginLeft: '-20px', // Espacement négatif pour compenser le padding
           gap: 40,
+          margin: '40px', // Marges autour de la galerie
         }}
       >
-        <Content style={{ gap: 40 }}>
-          {serie1.map((piece, index) => (
+        {serie.map((piece, key) => (
+          <div
+            key={key}
+            style={{
+              marginBottom: '40px', // Espacement vertical entre les items
+              // overflow: 'hidden',
+            }}
+          >
             <BrandImage
-              key={index}
               image={piece.image}
-              height={
-                device === 'mobile'
-                  ? '100%'
-                  : device === 'tablet'
-                  ? '100%'
-                  : piece.height
-              }
+              height={imageWidth * piece.ratio}
               name={piece.name}
               description={piece.description}
               size={piece.size}
               // hoverImage={piece.image_over}
             />
-          ))}
-        </Content>
-
-        <Content style={{ gap: 40 }}>
-          {serie2.map((piece, index) => (
-            <BrandImage
-              key={index}
-              image={piece.image}
-              height={
-                device === 'mobile'
-                  ? '100%'
-                  : device === 'tablet'
-                  ? '100%'
-                  : piece.height
-              }
-              name={piece.name}
-              description={piece.description}
-              size={piece.size}
-              // hoverImage={piece.image_over}
-            />
-          ))}
-        </Content>
-
-        <Content style={{ gap: 40 }}>
-          {serie3.map((piece, index) => (
-            <BrandImage
-              key={index}
-              image={piece.image}
-              height={
-                device === 'mobile'
-                  ? '100%'
-                  : device === 'tablet'
-                  ? '100%'
-                  : piece.height
-              }
-              name={piece.name}
-              description={piece.description}
-              size={piece.size}
-              // hoverImage={piece.image_over}
-            />
-          ))}
-        </Content>
-      </Row>
-
-      {/* <TitleRow
-        style={{
-          width: `calc(100vw - ${paddingRow3 * 2}px)`,
-          paddingBottom: paddingRow3 - 5,
-          marginLeft: paddingRow3,
-          marginRight: paddingRow3,
-          marginTop: 20,
-        }}
-      >
-        <ContentText>{'PIÉCES UNIQUES'}</ContentText>
-      </TitleRow>
-
-      <Grid
-        style={{
-          padding: paddingRow3,
-          width: `calc(100vw - ${paddingRow3 * 2}px)`,
-        }}
-      >
-        {[...unique1, ...unique2, ...unique3].map((piece, index) => (
-          <BrandImage
-            key={index}
-            image={piece.image}
-            height={piece.height}
-            name={piece.name}
-            description={piece.description}
-            size={piece.size}
-            hoverImage={MountainLineImage}
-          />
+          </div>
         ))}
-      </Grid>
-
-      <TitleRow
-        style={{
-          width: `calc(100vw - ${paddingRow3 * 2}px)`,
-          paddingBottom: paddingRow3 - 5,
-          marginLeft: paddingRow3,
-          marginRight: paddingRow3,
-          marginTop: 80,
-        }}
-      >
-        <ContentText>{'MINI SÉRIES'}</ContentText>
-      </TitleRow>
-
-      <Grid
-        style={{
-          padding: paddingRow3,
-          width: `calc(100vw - ${paddingRow3 * 2}px)`,
-        }}
-      >
-        {[...serie1, ...serie2, ...serie3].map((piece, index) => (
-          <BrandImage
-            key={index}
-            image={piece.image}
-            height={piece.height}
-            name={piece.name}
-            description={piece.description}
-            size={piece.size}
-            hoverImage={MountainLineImage}
-          />
-        ))}
-      </Grid> */}
+      </Masonry>
 
       <TitleRow
         style={{
@@ -292,15 +177,13 @@ const Catalogue = () => {
 
 export default Catalogue;
 
-// const Grid = styled.div`
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-//   gap: 40px;
-// `;
 const Row = styled.div`
   display: flex;
   width: 100%;
-  @media (max-width: 1280px) {
+  @media (max-width: 1179px) {
+    flex-direction: row;
+  }
+  @media (max-width: 819px) {
     flex-direction: column;
   }
 `;
@@ -315,12 +198,12 @@ const TitleRow = styled.div`
   justify-content: center;
 `;
 
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-`;
+// const Content = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   height: 100%;
+// `;
 
 const ContentText = styled.div`
   font-family: 'Wix Madefor Display', sans-serif;

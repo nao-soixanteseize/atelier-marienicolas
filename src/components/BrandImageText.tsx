@@ -49,8 +49,8 @@ const Container = styled.div`
 const TextContent = styled.div`
   color: #888;
   font-family: 'Wix Madefor Display', sans-serif;
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 12px;
+  line-height: 1.5;
 `;
 const TitleContent = styled.div`
   font-family: 'Wix Madefor Display', sans-serif;
@@ -75,7 +75,7 @@ const TextBlock = styled.div`
   }
 `;
 const Text = styled.div`
-  max-width: 50%;
+  max-width: 75%;
   @media (max-width: 1280px) {
     max-width: 100%;
   }

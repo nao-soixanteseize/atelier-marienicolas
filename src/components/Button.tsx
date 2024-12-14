@@ -47,6 +47,6 @@ const ButtonContainer = styled.button<{ $isHovered: boolean }>`
   color: ${({ $isHovered }) => ($isHovered ? '#ffffff' : '#000000')};
 
   @media (max-width: 1280px) {
-    max-width: unset;
+    max-width: 300px;
   }
 `;

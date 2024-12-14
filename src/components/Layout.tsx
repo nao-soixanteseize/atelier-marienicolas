@@ -37,6 +37,7 @@ const Container = styled.div`
   pointer-events: auto;
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 `;
 const Header = styled.header`
   display: flex;

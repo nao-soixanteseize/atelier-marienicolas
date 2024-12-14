@@ -42,12 +42,36 @@ import Image64 from './img/64.jpg';
 import Image65 from './img/65.jpg';
 import Image66 from './img/66.jpg';
 import Image67 from './img/67.jpg';
+import Image68 from './img/68.jpg';
+import Image69 from './img/69.jpg';
+import Image70 from './img/70.jpg';
+import Image71 from './img/71.jpg';
+import Image72 from './img/72.jpg';
+import Image73 from './img/73.jpg';
+import Image74 from './img/74.jpg';
+import Image75 from './img/75.jpg';
+import Image76 from './img/76.jpg';
+import Image77 from './img/77.jpg';
+import Image78 from './img/78.jpg';
+import Image79 from './img/79.jpg';
+import Image80 from './img/80.jpg';
+import Image81 from './img/81.jpg';
+import Image82 from './img/82.jpg';
+import Image83 from './img/83.jpg';
+import Image84 from './img/84.jpg';
+import Image85 from './img/85.jpg';
+import Image86 from './img/86.jpg';
+import Image87 from './img/87.jpg';
+import Image88 from './img/88.jpg';
+import Image89 from './img/89.jpg';
+import Image91 from './img/91.jpg';
+import Image92 from './img/92.jpg';
 
-export const unique1 = [
+export const unique = [
   {
     image: Image44,
     name: 'Ronce',
-    height: '100%',
+    ratio: 1,
     description: 'Grès blanc chamotté émaillé',
     size: 'H22xL34cm',
     image_over: Image44_over,
@@ -56,7 +80,7 @@ export const unique1 = [
   {
     image: Image19,
     name: 'Cocody',
-    height: '50vw',
+    ratio: 1.5,
     description: 'Grès blanc chamotté brut',
     size: 'H75xl30cm',
     image_over: Image19_over,
@@ -66,7 +90,7 @@ export const unique1 = [
   {
     image: Image38,
     name: 'Delhi',
-    height: '100%',
+    ratio: 1,
     description: 'Grès noir chamotté',
     size: 'H11xD15cm',
     image_over: Image44_over,
@@ -74,18 +98,62 @@ export const unique1 = [
   },
   {
     image: Image46,
-    name: 'Bougeoir Ashanti',
-    height: '40vw',
+    name: 'Bougeoir Ashanti N°1',
+    ratio: 1.4,
     description: 'Grès blanc chamotté émaillé',
     size: 'H29xl25cm',
     image_over: Image46_over,
     sorting: 1,
   },
-
+  {
+    image: Image87,
+    name: 'Bougeoir Ashanti N°2',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté brut',
+    size: 'H30xl25cm',
+    image_over: Image46_over,
+    sorting: 1,
+  },
+  {
+    image: Image91,
+    name: 'Bougeoir Ashanti N°3',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'H35xl25cm',
+    image_over: Image46_over,
+    sorting: 1,
+  },
+  {
+    image: Image88,
+    name: 'Bougeoir Ashanti N°4',
+    ratio: 1.4,
+    description: 'Grès blanc émaillé',
+    size: 'H28xl25cm',
+    image_over: Image46_over,
+    sorting: 1,
+  },
+  {
+    image: Image89,
+    name: 'Bougeoir Ashanti N°5',
+    ratio: 1.4,
+    description: 'Grès blanc émaillé',
+    size: 'H38xl27cm',
+    image_over: Image46_over,
+    sorting: 1,
+  },
+  {
+    image: Image92,
+    name: 'Bougeoir Ashanti N°6',
+    ratio: 1.4,
+    description: 'Grès blanc émaillé',
+    size: 'H35xl27cm',
+    image_over: Image46_over,
+    sorting: 1,
+  },
   {
     image: Image39,
     name: 'Bassam',
-    height: '100%',
+    ratio: 1,
     description: 'Grès noir chamotté émaillé',
     size: 'H11xD16cm',
     image_over: Image39_over,
@@ -94,25 +162,52 @@ export const unique1 = [
   {
     image: Image58,
     name: 'Coupe Lipizan',
-    height: '100%',
+    ratio: 1.5,
     description: 'Grès blanc lisse émaillé',
     size: 'H20xl20cm',
     image_over: Image44_over,
     sorting: 1,
   },
   {
+    image: Image86,
+    name: 'Coupe Lipizan N°2',
+    ratio: 1,
+    description: 'Grès blanc lisse émaillé',
+    size: 'H20xl20cm',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image71,
+    name: 'Vase Polpo',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: 'H12xD19cm',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image84,
+    name: 'Coupe Venise',
+    ratio: 1.1,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'H20xD25cm',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
     image: Image59,
     name: 'Vase Raku vert',
-    height: '100%',
-    description: 'Grès blanc émaillé',
-    size: 'H12xD15cm',
+    ratio: 1,
+    description: 'Grès émaillé',
+    size: 'H15xD20cm',
     image_over: Image44_over,
     sorting: 1,
   },
   {
     image: Image60,
     name: 'Vase Boule',
-    height: '40vw',
+    ratio: 1.5,
     description: 'Grès blanc émaillé',
     size: 'H28xD20cm',
     image_over: Image44_over,
@@ -121,38 +216,35 @@ export const unique1 = [
   {
     image: Image65,
     name: 'Guéridon Éclipse',
-    height: '100%',
+    ratio: 1,
     description: 'Grès blanc chamotté brut',
     size: 'H33xD43cm',
     image_over: Image44_over,
     sorting: 1,
   },
-];
-
-export const unique2 = [
   {
     image: Image20,
     name: 'Chicago',
-    height: '50vw',
+    ratio: 1.5,
     description: 'Grès noir chamotté brut',
     size: 'H63xl30cm',
     image_over: Image20_over,
     sorting: 1,
   },
-
   {
-    image: Image22,
-    name: 'Grand plat Starfish',
-    height: '25vw',
-    description: 'Grès noir émaillé, incisions en grès blanc',
-    size: 'L44xl21cm',
-    image_over: Image44_over,
+    image: Image68,
+    name: 'Chicago N°2',
+    ratio: 1.5,
+    description: 'Grès noir chamotté brut',
+    size: 'H53xl25cm',
+    image_over: Image20_over,
     sorting: 1,
   },
+
   {
     image: Image21,
     name: 'Coper',
-    height: '100%',
+    ratio: 1,
     description: 'Grès noir brut',
     size: 'H52xl45cm',
     image_over: Image21_over,
@@ -162,7 +254,7 @@ export const unique2 = [
   {
     image: Image42,
     name: 'Sirius',
-    height: '100%',
+    ratio: 1,
     description: 'Grès blanc chamotté brut',
     size: 'L24xl17cm',
     image_over: Image44_over,
@@ -170,9 +262,19 @@ export const unique2 = [
   },
 
   {
+    image: Image85,
+    name: 'Bougeoir Vésuve',
+    ratio: 1.4,
+    description: 'Grès noir brut, cire végétale',
+    size: 'D13xH24cm',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+
+  {
     image: Image53,
     name: 'Vase jeu d’anses en colonnes',
-    height: '40vw',
+    ratio: 1.5,
     description: 'Grès noir brut et émaillé',
     size: 'H15xD22cm',
     image_over: Image44_over,
@@ -181,7 +283,7 @@ export const unique2 = [
   {
     image: Image52,
     name: 'Vase jeu d’anses en arceaux',
-    height: '100%',
+    ratio: 1,
     description: 'Grès noir brut et émaillé',
     size: 'H15xD22cm',
     image_over: Image44_over,
@@ -190,7 +292,7 @@ export const unique2 = [
   {
     image: Image57,
     name: 'Seau Lipizan',
-    height: '100%',
+    ratio: 1,
     description: 'Grès blanc lisse émaillé',
     size: 'H13xD14cm',
     image_over: Image44_over,
@@ -199,7 +301,7 @@ export const unique2 = [
   {
     image: Image61,
     name: 'Vase Raku beige',
-    height: '100%',
+    ratio: 1,
     description: 'Grès blanc émaillé',
     size: 'H15xD15cm',
     image_over: Image44_over,
@@ -208,7 +310,7 @@ export const unique2 = [
   {
     image: Image62,
     name: 'Théière Nagoya',
-    height: '100%',
+    ratio: 1,
     description: 'Grès blanc émaillé',
     size: '70cl',
     image_over: Image44_over,
@@ -217,19 +319,16 @@ export const unique2 = [
   {
     image: Image67,
     name: 'Vase Wavy',
-    height: '100%',
+    ratio: 1,
     description: 'Grès blanc émaillé',
     size: 'H22xl21cm',
     image_over: Image44_over,
     sorting: 1,
   },
-];
-
-export const unique3 = [
   {
     image: Image37,
     name: 'Fuji',
-    height: '100%',
+    ratio: 1,
     description: 'Grès noir chamotté brut',
     size: 'H13xl34cm',
     image_over: Image44_over,
@@ -238,7 +337,7 @@ export const unique3 = [
   {
     image: Image50,
     name: 'Vase jeu d’anses en arceaux',
-    height: '100%',
+    ratio: 1,
     description: 'Grès noir brut et émaillé',
     size: 'H15xD22cm',
     image_over: Image44_over,
@@ -247,7 +346,7 @@ export const unique3 = [
   {
     image: Image18,
     name: 'Assinie',
-    height: '50vw',
+    ratio: 1.5,
     description: 'Grès blanc chamotté',
     size: 'H78xD30cm',
     image_over: Image44_over,
@@ -257,7 +356,7 @@ export const unique3 = [
   {
     image: Image40,
     name: 'Yassa',
-    height: '40vw',
+    ratio: 1.5,
     description: 'Grès noir chamotté brut et émaillé',
     size: 'H25xl15cm',
     image_over: Image44_over,
@@ -266,7 +365,7 @@ export const unique3 = [
   {
     image: Image43,
     name: 'Orion',
-    height: '100%',
+    ratio: 1,
     description: 'Grès blanc chamotté brut',
     size: 'L26xl17cm',
     image_over: Image44_over,
@@ -276,7 +375,7 @@ export const unique3 = [
   {
     image: Image48,
     name: 'Etna',
-    height: '100%',
+    ratio: 1.25,
     description: 'Grès noir brut',
     size: 'H24xD24cm',
     image_over: Image44_over,
@@ -285,7 +384,7 @@ export const unique3 = [
   {
     image: Image41,
     name: 'Vénus',
-    height: '100%',
+    ratio: 1,
     description: 'Grès blanc chamotté brut',
     size: 'H13xD25cm',
     image_over: Image44_over,
@@ -294,7 +393,7 @@ export const unique3 = [
   {
     image: Image63,
     name: 'Théière Séoul',
-    height: '40vw',
+    ratio: 1.25,
     description: 'Grès blanc émaillé',
     size: '70cl',
     image_over: Image44_over,
@@ -303,28 +402,55 @@ export const unique3 = [
   {
     image: Image64,
     name: 'Bol Kyoto',
-    height: '100%',
+    ratio: 1,
     description: 'Grès blanc émaillé',
     size: 'H9xD13cm',
     image_over: Image44_over,
     sorting: 1,
   },
+  {
+    image: Image82,
+    name: 'Bol Nara',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image83,
+    name: 'Bol Kobe',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
 ];
 
-export const serie1 = [
+export const serie = [
   {
     image: Image1,
     name: 'Assiettes à tapas',
-    height: '100%',
+    ratio: 1,
     description: 'Grès noir brut et émaillé',
     size: 'D15cm',
     image_over: Image44_over,
     sorting: 1,
   },
   {
+    image: Image55,
+    name: 'Gobelet Lipizan',
+    ratio: 1.5,
+    description: 'Grès blanc lisse émaillé ',
+    size: 'H10xD6cm',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
     image: Image5,
     name: 'Assiettes Starfish',
-    height: '100%',
+    ratio: 1,
     description: 'Grès noir brut et émaillé',
     size: 'D20cm et D27cm',
     image_over: Image44_over,
@@ -333,28 +459,107 @@ export const serie1 = [
   {
     image: Image12,
     name: 'Bol Matcha',
-    height: '100%',
+    ratio: 1,
     description: 'Grès blanc lisse émaillé',
     size: 'H8xD10cm',
     image_over: Image44_over,
     sorting: 1,
   },
-];
-
-export const serie2 = [
   {
-    image: Image55,
-    name: 'Gobelet Lipizan',
-    height: '40vw',
-    description: 'Grès blanc lisse émaillé ',
-    size: 'H10xD6cm',
+    image: Image72,
+    name: 'Bol Matcha',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
     image_over: Image44_over,
     sorting: 1,
   },
   {
+    image: Image75,
+    name: 'Bol Matcha',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image76,
+    name: 'Bol Matcha',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image77,
+    name: 'Bol Matcha',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image78,
+    name: 'Bol Matcha',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image74,
+    name: 'Bol Matcha',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image73,
+    name: 'Bol Matcha',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image79,
+    name: 'Bol Matcha',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image80,
+    name: 'Bol Matcha',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image81,
+    name: 'Bol Matcha',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+
+  {
     image: Image26,
     name: 'Tasses Moka',
-    height: '25vw',
+    ratio: 0.75,
     description: 'Grès noir brut et émaillé ',
     size: 'H7xD5cm',
     image_over: Image44_over,
@@ -363,19 +568,43 @@ export const serie2 = [
   {
     image: Image66,
     name: 'Tasse Ébène',
-    height: '100%',
+    ratio: 1,
     description: 'Grès noir brut et émaillé',
     size: 'H10xD8cm',
     image_over: Image44_over,
     sorting: 1,
   },
-];
-
-export const serie3 = [
+  {
+    image: Image70,
+    name: 'Tasses Lipizan',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image69,
+    name: 'Tasses Lipizan',
+    ratio: 1,
+    description: 'Grès blanc émaillé',
+    size: ' ',
+    image_over: Image44_over,
+    sorting: 1,
+  },
+  {
+    image: Image22,
+    name: 'Grand plat Starfish',
+    ratio: 0.75,
+    description: 'Grès noir émaillé, incisions en grès blanc',
+    size: 'L44xl21cm',
+    image_over: Image44_over,
+    sorting: 1,
+  },
   {
     image: Image25,
     name: 'Assiettes martelées',
-    height: '100%',
+    ratio: 1,
     description: 'grès blanc lisse émaillé',
     size: 'D20cm et D27cm',
     image_over: Image44_over,
@@ -385,7 +614,7 @@ export const serie3 = [
   {
     image: Image13,
     name: 'Saké',
-    height: '25vw',
+    ratio: 0.75,
     description: 'Grès roux émaillé',
     size: 'H5xD5cm',
     image_over: Image44_over,
@@ -394,7 +623,7 @@ export const serie3 = [
   {
     image: Image17,
     name: 'Tasses Moka',
-    height: '25vw',
+    ratio: 0.75,
     description: 'Grès noir brut et émaillé',
     size: 'H8xD5cm',
     image_over: Image44_over,

@@ -7,7 +7,7 @@ interface TestimonialProps {
   image: any;
   hoverImage?: any;
   noHoverFrame?: boolean;
-  height?: string;
+  height?: number;
   name?: string;
   description?: string;
   size?: string;
