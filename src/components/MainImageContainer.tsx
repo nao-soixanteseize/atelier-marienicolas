@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FunctionComponent, useState } from 'react';
 import styled from 'styled-components';
+import { useWindowSize } from '../hooks/useWindowSize';
 
 interface MainImageContainerProps {
   image: any;
@@ -15,6 +16,7 @@ export const MainImageContainer: FunctionComponent<MainImageContainerProps> = ({
   hoverImageStyle,
   height = '100%',
 }) => {
+  const { device } = useWindowSize();
   const [hover, setHover] = useState(true);
 
   return (
@@ -34,7 +36,7 @@ export const MainImageContainer: FunctionComponent<MainImageContainerProps> = ({
       }}
       whileTap={{ scale: 1 }}
       whileHover={{
-        scale: 0.98,
+        scale: device === 'mobile' ? 1 : 0.98,
       }}
       onHoverStart={() => setHover(true)}
       onHoverEnd={() => setHover(false)}
