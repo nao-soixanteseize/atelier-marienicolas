@@ -9,6 +9,7 @@ interface HoverContainerProps {
   name?: string;
   description?: string;
   size?: string;
+  noLegende?: boolean;
 }
 
 export const HoverContainer: FunctionComponent<HoverContainerProps> = ({
@@ -18,8 +19,9 @@ export const HoverContainer: FunctionComponent<HoverContainerProps> = ({
   name,
   description,
   size,
+  noLegende,
 }) => {
-  const [hover, setHover] = useState(false);
+  const [hover, setHover] = useState(true);
 
   // const crossSize = 15;
   const frameInitialSize = 0;
@@ -39,14 +41,14 @@ export const HoverContainer: FunctionComponent<HoverContainerProps> = ({
           scale: 0.95,
         }}
         onHoverStart={() => setHover(true)}
-        onHoverEnd={() => setHover(false)}
+        // onHoverEnd={() => setHover(false)}
         whileInView={{
           opacity: 1,
           scale: 1,
           transition: { duration: 0.5 },
         }}
       >
-        {!noHoverFrame && (
+        {/* !noHoverFrame && (
           <>
             <motion.div
               style={{
@@ -93,29 +95,32 @@ export const HoverContainer: FunctionComponent<HoverContainerProps> = ({
               animate={{ width: hover ? frameHoverSize : frameInitialSize }}
             />
           </>
-        )}
+        ) */}
 
         {children}
       </motion.div>
 
-      <motion.div
-        style={{
-          position: 'absolute',
-          zIndex: 20,
-          width: '100%',
-          bottom: -5,
-          opacity: 0,
-        }}
-        animate={{ opacity: hover ? 1 : 0 }}
-      >
-        <LegendeRow>
-          {name && <Legende>{name}</Legende>}
-          {description && (
+      {!noLegende && (
+        <motion.div
+          style={{
+            // position: 'absolute',
+            // zIndex: 20,
+            paddingTop: 10,
+            width: '100%',
+            bottom: -5,
+            opacity: 0,
+          }}
+          animate={{ opacity: hover ? 1 : 0 }}
+        >
+          <LegendeRow>
+            {name && <Legende>{name}</Legende>}
+            {/* description && (
             <Legende style={{ width: '50%' }}>{description}</Legende>
-          )}
-          {size && <Legende>{size}</Legende>}
-        </LegendeRow>
-      </motion.div>
+          ) */}
+            {size && <Legende>{size}</Legende>}
+          </LegendeRow>
+        </motion.div>
+      )}
     </Container>
   );
 };
@@ -130,11 +135,11 @@ const LegendeRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 10px;
 `;
 const Legende = styled.div`
-  color: #888;
+  color: #000000;
   font-family: 'Wix Madefor Display', sans-serif;
-  font-size: 12px;
-  margin-bottom: -8;
+  font-size: 14px;
+  /* margin-bottom: -8; */
 `;

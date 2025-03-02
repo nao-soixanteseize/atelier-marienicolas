@@ -5,9 +5,10 @@ import styled from 'styled-components';
 interface MenuItemProps {
   title: string;
   url?: string;
+  onClick?: () => void;
 }
 
-const MenuItem = ({ title, url }: MenuItemProps) => {
+const MenuItem = ({ title, url, onClick }: MenuItemProps) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -19,7 +20,8 @@ const MenuItem = ({ title, url }: MenuItemProps) => {
       $isHovered={isHovered}
       style={{ cursor: 'pointer' }}
       onClick={() => {
-        if (url) navigate(url);
+        if (onClick) onClick();
+        else if (url) navigate(url);
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -37,7 +39,7 @@ const Item = styled.div<{ $isHovered: boolean; $isActived: boolean }>`
   font-family: 'Wix Madefor Display', sans-serif;
   font-weight: ${({ $isHovered, $isActived }) =>
     $isHovered || $isActived ? 800 : 400};
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 3px;
   color: #000000;
 `;

@@ -33,12 +33,6 @@ import Image53 from './img/53.jpg';
 import Image55 from './img/55.jpg';
 import Image57 from './img/57.jpg';
 import Image58 from './img/58.jpg';
-import Image59 from './img/59.jpg';
-import Image60 from './img/60.jpg';
-import Image61 from './img/61.jpg';
-import Image62 from './img/62.jpg';
-import Image63 from './img/63.jpg';
-import Image64 from './img/64.jpg';
 import Image65 from './img/65.jpg';
 import Image66 from './img/66.jpg';
 import Image67 from './img/67.jpg';
@@ -56,8 +50,6 @@ import Image78 from './img/78.jpg';
 import Image79 from './img/79.jpg';
 import Image80 from './img/80.jpg';
 import Image81 from './img/81.jpg';
-import Image82 from './img/82.jpg';
-import Image83 from './img/83.jpg';
 import Image84 from './img/84.jpg';
 import Image85 from './img/85.jpg';
 import Image86 from './img/86.jpg';
@@ -195,24 +187,24 @@ export const unique = [
     image_over: Image44_over,
     sorting: 1,
   },
-  {
-    image: Image59,
-    name: 'Vase Raku vert',
-    ratio: 1,
-    description: 'Grès émaillé',
-    size: 'H15xD20cm',
-    image_over: Image44_over,
-    sorting: 1,
-  },
-  {
-    image: Image60,
-    name: 'Vase Boule',
-    ratio: 1.5,
-    description: 'Grès blanc émaillé',
-    size: 'H28xD20cm',
-    image_over: Image44_over,
-    sorting: 1,
-  },
+  // {
+  //   image: Image59,
+  //   name: 'Vase Raku vert',
+  //   ratio: 1,
+  //   description: 'Grès émaillé',
+  //   size: 'H15xD20cm',
+  //   image_over: Image44_over,
+  //   sorting: 1,
+  // },
+  // {
+  //   image: Image60,
+  //   name: 'Vase Boule',
+  //   ratio: 1.5,
+  //   description: 'Grès blanc émaillé',
+  //   size: 'H28xD20cm',
+  //   image_over: Image44_over,
+  //   sorting: 1,
+  // },
   {
     image: Image65,
     name: 'Guéridon Éclipse',
@@ -298,24 +290,24 @@ export const unique = [
     image_over: Image44_over,
     sorting: 1,
   },
-  {
-    image: Image61,
-    name: 'Vase Raku beige',
-    ratio: 1,
-    description: 'Grès blanc émaillé',
-    size: 'H15xD15cm',
-    image_over: Image44_over,
-    sorting: 1,
-  },
-  {
-    image: Image62,
-    name: 'Théière Nagoya',
-    ratio: 1,
-    description: 'Grès blanc émaillé',
-    size: '70cl',
-    image_over: Image44_over,
-    sorting: 1,
-  },
+  // {
+  //   image: Image61,
+  //   name: 'Vase Raku beige',
+  //   ratio: 1,
+  //   description: 'Grès blanc émaillé',
+  //   size: 'H15xD15cm',
+  //   image_over: Image44_over,
+  //   sorting: 1,
+  // },
+  // {
+  //   image: Image62,
+  //   name: 'Théière Nagoya',
+  //   ratio: 1,
+  //   description: 'Grès blanc émaillé',
+  //   size: '70cl',
+  //   image_over: Image44_over,
+  //   sorting: 1,
+  // },
   {
     image: Image67,
     name: 'Vase Wavy',
@@ -390,42 +382,42 @@ export const unique = [
     image_over: Image44_over,
     sorting: 1,
   },
-  {
-    image: Image63,
-    name: 'Théière Séoul',
-    ratio: 1.25,
-    description: 'Grès blanc émaillé',
-    size: '70cl',
-    image_over: Image44_over,
-    sorting: 1,
-  },
-  {
-    image: Image64,
-    name: 'Bol Kyoto',
-    ratio: 1,
-    description: 'Grès blanc émaillé',
-    size: 'H9xD13cm',
-    image_over: Image44_over,
-    sorting: 1,
-  },
-  {
-    image: Image82,
-    name: 'Bol Nara',
-    ratio: 1,
-    description: 'Grès blanc émaillé',
-    size: ' ',
-    image_over: Image44_over,
-    sorting: 1,
-  },
-  {
-    image: Image83,
-    name: 'Bol Kobe',
-    ratio: 1,
-    description: 'Grès blanc émaillé',
-    size: ' ',
-    image_over: Image44_over,
-    sorting: 1,
-  },
+  // {
+  //   image: Image63,
+  //   name: 'Théière Séoul',
+  //   ratio: 1.25,
+  //   description: 'Grès blanc émaillé',
+  //   size: '70cl',
+  //   image_over: Image44_over,
+  //   sorting: 1,
+  // },
+  // {
+  //   image: Image64,
+  //   name: 'Bol Kyoto',
+  //   ratio: 1,
+  //   description: 'Grès blanc émaillé',
+  //   size: 'H9xD13cm',
+  //   image_over: Image44_over,
+  //   sorting: 1,
+  // },
+  // {
+  //   image: Image82,
+  //   name: 'Bol Nara',
+  //   ratio: 1,
+  //   description: 'Grès blanc émaillé',
+  //   size: ' ',
+  //   image_over: Image44_over,
+  //   sorting: 1,
+  // },
+  // {
+  //   image: Image83,
+  //   name: 'Bol Kobe',
+  //   ratio: 1,
+  //   description: 'Grès blanc émaillé',
+  //   size: ' ',
+  //   image_over: Image44_over,
+  //   sorting: 1,
+  // },
 ];
 
 export const serie = [

@@ -13,38 +13,53 @@ const Catalogue = () => {
   console.log('Device', device);
   return (
     <Layout>
-      <TitleRow
+      <div
         style={{
-          marginTop: 60,
-          marginBottom: 40,
-          width: `calc(60vw)`,
-          paddingBottom: paddingRow3 - 5,
-          marginLeft: '20%',
-          marginRight: '20%',
-        }}
-      >
-        <ContentText>{'CONTACT'}</ContentText>
-      </TitleRow>
-
-      <Row
-        style={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
+          marginBottom: 60,
         }}
       >
-        {messageSent ? (
-          <ContentText>{'Votre message a bien été envoyé. Merci.'}</ContentText>
-        ) : (
-          <div
-            style={{
-              width:
-                device === 'mobile' || device === 'tablet' ? '100%' : '60%',
-            }}
-          >
-            <ContactForm setMessageSent={setMessageSent} page={'ContactPage'} />
-          </div>
-        )}
-      </Row>
+        <TitleRow
+          style={{
+            marginBottom: 40,
+            width: `calc(40vw)`,
+            paddingBottom: paddingRow3 - 5,
+            marginLeft: '20%',
+            marginRight: '20%',
+          }}
+        >
+          <ContentText>{'CONTACT'}</ContentText>
+        </TitleRow>
+
+        <Row
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          {messageSent ? (
+            <ContentText>
+              {'Votre message a bien été envoyé. Merci.'}
+            </ContentText>
+          ) : (
+            <div
+              style={{
+                width:
+                  device === 'mobile' || device === 'tablet' ? '100%' : '60%',
+              }}
+            >
+              <ContactForm
+                setMessageSent={setMessageSent}
+                page={'ContactPage'}
+              />
+            </div>
+          )}
+        </Row>
+      </div>
     </Layout>
   );
 };

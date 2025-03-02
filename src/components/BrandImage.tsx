@@ -11,6 +11,7 @@ interface TestimonialProps {
   name?: string;
   description?: string;
   size?: string;
+  noLegende?: boolean;
 }
 
 export const BrandImage: FunctionComponent<TestimonialProps> = ({
@@ -22,19 +23,21 @@ export const BrandImage: FunctionComponent<TestimonialProps> = ({
   name,
   description,
   size,
+  noLegende,
 }) => {
   return (
     <HoverContainer
-      noHoverFrame={noHoverFrame}
+      noHoverFrame={true}
       style={style}
       name={name}
       description={description}
       size={size}
+      noLegende={noLegende}
     >
       <MainImageContainer
         image={image}
         hoverImage={hoverImage}
-        height={height}
+        // height={height}
       />
     </HoverContainer>
   );

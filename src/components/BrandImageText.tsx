@@ -40,34 +40,33 @@ const Container = styled.div`
   position: relative;
   display: flex;
   gap: 0px;
-  width: 100%;
+  width: 80%;
   height: 100%;
+  /* max-height: 440px; */
+
   @media (max-width: 1180px) {
     flex-direction: column;
   }
 `;
 const TextContent = styled.div`
-  color: #888;
+  color: #000000;
   font-family: 'Wix Madefor Display', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
 `;
 const TitleContent = styled.div`
   font-family: 'Wix Madefor Display', sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   margin-bottom: 18px;
 `;
 const TextBlock = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-color: black;
-  border-width: 0;
-  border-right-width: 0.5px;
-  border-style: solid;
-
+  overflow-y: scroll;
+  padding-left: 40px;
+  margin-top: 40px;
+  margin-bottom: 65px; /* border-color: black; */ /* border-width: 0; */
+  /* border-right-width: 0.5px; */ /* border-style: solid; */
   @media (max-width: 1180px) {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -75,7 +74,7 @@ const TextBlock = styled.div`
   }
 `;
 const Text = styled.div`
-  max-width: 75%;
+  max-width: 90%;
   @media (max-width: 1180px) {
     max-width: 100%;
   }

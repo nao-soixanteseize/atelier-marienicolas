@@ -1,6 +1,7 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
 import styled from 'styled-components';
-import Logo from '../img/LogoMN.svg';
+import { useWindowSize } from '../hooks/useWindowSize';
+import Logo from '../img/Logo_test.svg';
 import MenuItem from './MenuItem';
 
 interface LayoutProps {
@@ -8,27 +9,80 @@ interface LayoutProps {
 }
 
 export const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
+  const [openCollections, setOpenCollections] = useState(false);
+
+  const { device, windowSize } = useWindowSize();
+
   return (
     <Container>
-      <Header>
+      <Header
+        style={{
+          position: device === 'mobile' ? 'relative' : 'fixed',
+          height: device === 'mobile' ? 'auto' : '80%',
+          zIndex: 100,
+          paddingTop: device === 'mobile' ? 20 : 28,
+          paddingBottom: device === 'mobile' ? 20 : 30,
+          paddingLeft: device === 'mobile' ? 20 : 40,
+          paddingRight: device === 'mobile' ? 20 : 40,
+        }}
+      >
         <LogoContainer>
           <LogoImg src={Logo} />
         </LogoContainer>
-        <MenuRow>
-          <MenuItem title="ATELIER" url="/" />
-          <MenuSeparator>{'|'}</MenuSeparator>
-          <MenuItem title="GALERIE" url="/galerie" />
-          <MenuSeparator>{'|'}</MenuSeparator>
-          <MenuItem title="CONTACT" url="/contact" />
-        </MenuRow>
+        {
+          <MenuRow>
+            <MenuItem title="ATELIER" url="/" />
+            <MenuItem
+              title="COLLECTIONS"
+              onClick={() => {
+                console.log('click');
+                setOpenCollections(!openCollections);
+              }}
+            />
+            {openCollections && (
+              <div
+                style={{
+                  marginLeft: 20,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 24,
+                  marginBottom: 20,
+                }}
+              >
+                <MenuItem title="ASHANTI" url="/collection/ashanti" />
+                <MenuItem title="ETNA" url="/collection/etna" />
+                <MenuItem title="JEU D'ANSES" url="/collection/jeu-d-anses" />
+                <MenuItem title="K-PLA" url="/collection/k-pla" />
+                <MenuItem title="ORGANIC" url="/collection/organic" />
+                <MenuItem title="PLUS..." url="/collection/others" />
+              </div>
+            )}
+            <MenuItem title="CONTACT" url="/contact" />
+          </MenuRow>
+        }
       </Header>
 
-      <ChildrenContainer>{children}</ChildrenContainer>
-
-      <Footer>
-        <MenuItem title="MENTIONS LÉGALES" url="/mentions" />
-        <MenuItem title="ATELIER MARIE NICOLAS ©2024" />
-      </Footer>
+      <ChildrenContainer
+        style={{
+          paddingLeft: device === 'mobile' ? 0 : 250,
+          paddingTop: device === 'mobile' ? 20 : 160,
+        }}
+      >
+        {children}
+        <Footer
+          style={{
+            width: device === 'mobile' ? '100%' : 'calc(100% - 80px)',
+            paddingLeft: device === 'mobile' ? 15 : 40,
+            marginBottom: device === 'mobile' ? 15 : undefined,
+            flexDirection: device === 'mobile' ? 'column' : 'row',
+            justifyContent: device === 'mobile' ? 'flex-end' : 'space-between',
+            alignItems: device === 'mobile' ? 'flex-start' : 'center',
+          }}
+        >
+          <MenuItem title="MENTIONS LÉGALES" url="/mentions" />
+          <MenuItem title="MARIE NICOLAS ©2025" />
+        </Footer>
+      </ChildrenContainer>
     </Container>
   );
 };
@@ -42,27 +96,28 @@ const Container = styled.div`
 const Header = styled.header`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 125px;
+  align-items: flex-start;
   /* width: calc(100vw - 80px);
   margin: 0 40px; */
-  padding-top: 28px;
-  padding-bottom: 30px;
+
   gap: 20px;
+  z-index: 100;
 `;
 const Footer = styled.footer`
   margin-top: 80px;
-  padding: 0 40px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   height: 60px;
-  width: calc(100vw - 80px);
-  border-top: 0.5px solid #000;
+  /* border-top: 0.5px solid #000; */
 `;
 const MenuRow = styled.div`
+  /* background-color: red; */
   display: flex;
+  flex-direction: column;
   gap: 20px;
+  height: 60%;
+  justify-content: flex-start;
+  padding-top: 30px;
 `;
 const MenuSeparator = styled.div`
   font-family: 'Wix Madefor Display', sans-serif;
@@ -73,10 +128,10 @@ const MenuSeparator = styled.div`
 `;
 const LogoContainer = styled.div`
   position: relative;
-  width: 110px;
+  width: 250px;
+  margin-top: 20px;
 `;
 const LogoImg = styled.img``;
 const ChildrenContainer = styled.div`
   background-color: #fff;
-  padding-top: 8px;
 `;

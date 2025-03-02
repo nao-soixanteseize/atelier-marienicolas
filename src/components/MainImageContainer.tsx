@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FunctionComponent, useState } from 'react';
 import styled from 'styled-components';
 
@@ -15,7 +15,7 @@ export const MainImageContainer: FunctionComponent<MainImageContainerProps> = ({
   hoverImageStyle,
   height = '100%',
 }) => {
-  const [hover, setHover] = useState(false);
+  const [hover, setHover] = useState(true);
 
   return (
     <motion.div
@@ -41,7 +41,7 @@ export const MainImageContainer: FunctionComponent<MainImageContainerProps> = ({
       transition={{ duration: 1 }}
     >
       <Img $hover={hover} src={image} />
-      {hoverImage && (
+      {/* hoverImage && (
         <AnimatePresence>
           {hover && (
             <motion.div
@@ -63,7 +63,7 @@ export const MainImageContainer: FunctionComponent<MainImageContainerProps> = ({
             </motion.div>
           )}
         </AnimatePresence>
-      )}
+      ) */}
     </motion.div>
   );
 };
