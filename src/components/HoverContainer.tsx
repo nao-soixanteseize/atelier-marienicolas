@@ -24,8 +24,8 @@ export const HoverContainer: FunctionComponent<HoverContainerProps> = ({
   const [hover, setHover] = useState(true);
 
   // const crossSize = 15;
-  const frameInitialSize = 0;
-  const frameHoverSize = 20;
+  // const frameInitialSize = 0;
+  // const frameHoverSize = 20;
   // const border = '.75px solid black';
 
   const frameColor = 'white';

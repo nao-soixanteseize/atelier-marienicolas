@@ -74,11 +74,3 @@ const Img = styled.img<{ $hover: boolean }>`
   object-fit: cover;
   /* mix-blend-mode: ${({ $hover }) => ($hover ? 'luminosity' : 'unset')}; */
 `;
-const HoverImg = styled.img`
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-`;

@@ -10,26 +10,22 @@ import {
 } from '../collections';
 import { Layout } from '../components/Layout';
 import Section from '../components/Section';
-import { useWindowSize } from '../hooks/useWindowSize';
 
 const Collections = () => {
-  const { device, windowSize } = useWindowSize();
+  // const { device /* , windowSize */ } = useWindowSize();
   const { name } = useParams();
 
-  const paddingRow3 = device === 'mobile' ? 20 : 40;
+  // const paddingRow3 = device === 'mobile' ? 20 : 40;
 
-  const imageWidth = Math.floor(
-    device === 'mobile'
-      ? windowSize.width - paddingRow3 * 2
-      : device === 'tablet'
-      ? (windowSize.width - paddingRow3 * 3) / 2
-      : device === 'desktop'
-      ? (windowSize.width - paddingRow3 * 4) / 3
-      : 100,
-  );
-
-  console.log('Width', windowSize.width);
-  console.log('Image width', imageWidth);
+  // const imageWidth = Math.floor(
+  //   device === 'mobile'
+  //     ? windowSize.width - paddingRow3 * 2
+  //     : device === 'tablet'
+  //     ? (windowSize.width - paddingRow3 * 3) / 2
+  //     : device === 'desktop'
+  //     ? (windowSize.width - paddingRow3 * 4) / 3
+  //     : 100,
+  // );
 
   const sections = [
     {
@@ -84,6 +80,7 @@ const Collections = () => {
               <Section section={section} />
             </div>
           );
+        else return null;
       })}
     </Layout>
   );

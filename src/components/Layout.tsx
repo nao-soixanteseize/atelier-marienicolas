@@ -11,7 +11,7 @@ interface LayoutProps {
 export const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
   const [openCollections, setOpenCollections] = useState(false);
 
-  const { device, windowSize } = useWindowSize();
+  const { device } = useWindowSize();
 
   return (
     <Container>
@@ -119,13 +119,7 @@ const MenuRow = styled.div`
   justify-content: flex-start;
   padding-top: 30px;
 `;
-const MenuSeparator = styled.div`
-  font-family: 'Wix Madefor Display', sans-serif;
-  font-weight: 400;
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: #000000;
-`;
+
 const LogoContainer = styled.div`
   position: relative;
   width: 250px;
