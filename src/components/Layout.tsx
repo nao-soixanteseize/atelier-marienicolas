@@ -54,6 +54,11 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
                 <MenuItem title="JEU D'ANSES" url="/collection/jeu-d-anses" />
                 <MenuItem title="K-PLA" url="/collection/k-pla" />
                 <MenuItem title="ORGANIC" url="/collection/organic" />
+                <MenuItem title="DAKAR" url="/collection/dakar" />
+                <MenuItem
+                  title="COLLABORATIONS"
+                  url="/collection/collaborations"
+                />
                 <MenuItem title="PLUS..." url="/collection/others" />
               </div>
             )}

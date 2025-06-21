@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 import '../App.css';
 import {
   ashanti,
+  collab_lelad,
+  dakar,
   etna,
   jeu_d_anses,
   kpla,
@@ -52,6 +54,16 @@ const Collections = () => {
       title: 'Organic',
       slug: 'organic',
       products: organic,
+    },
+    {
+      title: 'Dakar',
+      slug: 'dakar',
+      products: dakar,
+    },
+    {
+      title: 'Collaborations',
+      slug: 'collaborations',
+      products: collab_lelad,
     },
     {
       title: 'Others',

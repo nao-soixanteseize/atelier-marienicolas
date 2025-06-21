@@ -22,14 +22,11 @@ import Image48 from './img/48.jpg';
 import Image50 from './img/50.jpg';
 import Image52 from './img/52.jpg';
 import Image53 from './img/53.jpg';
-import Image57 from './img/57.jpg';
-import Image58 from './img/58.jpg';
 import Image65 from './img/65.jpg';
 import Image67 from './img/67.jpg';
 import Image68 from './img/68.jpg';
 import Image71 from './img/71.jpg';
 import Image84 from './img/84.jpg';
-import Image85 from './img/85.jpg';
 import Image86 from './img/86.jpg';
 import Image87 from './img/87.jpg';
 import Image88 from './img/88.jpg';
@@ -39,6 +36,30 @@ import Image92 from './img/92.jpg';
 import Image94 from './img/94.jpg';
 import Image95 from './img/95.jpg';
 
+import Image101 from './img/new/101.jpg';
+import Image102 from './img/new/102.jpg';
+import Image104 from './img/new/104.jpg';
+import Image105 from './img/new/105.jpg';
+import Image106 from './img/new/106.jpg';
+import Image107 from './img/new/107.jpg';
+import Image108 from './img/new/108.jpg';
+import Image111 from './img/new/111.jpg';
+import Image112 from './img/new/112.jpg';
+import Image113 from './img/new/113.jpg';
+import Image114 from './img/new/114.jpg';
+import Image115 from './img/new/115.jpg';
+import Image116 from './img/new/116.jpg';
+import Image117 from './img/new/117.jpg';
+import Image118 from './img/new/118.jpg';
+import Image119 from './img/new/119.jpg';
+import Image120 from './img/new/120.jpg';
+import Image121 from './img/new/121.jpg';
+
+import Image96 from './img/new/96.jpg';
+import Image97 from './img/new/97.jpg';
+import Image98 from './img/new/98.jpg';
+import Image99 from './img/new/99.jpg';
+
 export enum ProductTypes {
   ART_DE_LA_TABLE = 'Art de la table',
   LUMINAIRES = 'Luminaires',
@@ -47,7 +68,48 @@ export enum ProductTypes {
   DECORATION = 'Décoration',
 }
 
+export const collab_lelad = [
+  {
+    id: 102,
+    image: Image98,
+    name: 'Marie Nicolas x LeLad Éditions',
+    ratio: 1.4,
+    description: 'Bois + Grès noir chamotté brut',
+    size: '...',
+    image_over: Image98,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+    additional_images: [Image99, /* Image100, */ Image101],
+  },
+];
+
+export const dakar = [
+  {
+    id: 125,
+    image: Image121,
+    name: 'Dakar',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'H69 x D40cm',
+    image_over: Image121,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+  },
+];
+
 export const ashanti = [
+  {
+    id: 123,
+    image: Image119,
+    name: 'Lampe Ashanti',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté',
+    size: 'H61 x D40cm',
+    image_over: Image119,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+  },
+
   {
     id: 1,
     image: Image46,
@@ -114,13 +176,46 @@ export const ashanti = [
     sorting: 1,
     type: [ProductTypes.DECORATION],
   },
+  {
+    id: 109,
+    image: Image105,
+    name: 'Bougeoir Ashanti N°7',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'H29xl25cm',
+    image_over: Image105,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+  },
+  {
+    id: 110,
+    image: Image106,
+    name: 'Bougeoir Ashanti N°8',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'H29xl25cm',
+    image_over: Image106,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+  },
 ];
 
 export const etna = [
+  /* {
+    id: 113,
+    image: Image109,
+    name: 'Coupe Etna',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'D25 x H20cm',
+    image_over: Image109,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+  }, */
   {
     id: 7,
     image: Image84,
-    name: 'Coupe Venise',
+    name: 'Coupe Etna Blanche',
     ratio: 1.1,
     description: 'Grès blanc chamotté émaillé',
     size: 'H20xD25cm',
@@ -131,7 +226,7 @@ export const etna = [
   {
     id: 8,
     image: Image48,
-    name: 'Etna',
+    name: 'Coupe Etna Noire',
     ratio: 1.25,
     description: 'Grès noir brut',
     size: 'H24xD24cm',
@@ -143,10 +238,33 @@ export const etna = [
 
 export const kpla = [
   {
+    id: 120,
+    image: Image116,
+    name: 'Chicago N°2',
+    ratio: 1.4,
+    description: 'Grès noir chamotté',
+    size: 'H53 x D25cm',
+    image_over: Image116,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+    additional_images: [Image68],
+  },
+  {
+    id: 124,
+    image: Image120,
+    name: 'Chicago N°3',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'H51,5 x D30cm',
+    image_over: Image120,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+  },
+  {
     id: 9,
     image: Image20,
     additional_images: [Image95, Image94],
-    name: 'Chicago',
+    name: 'Chicago N°1',
     ratio: 1.5,
     description: 'Grès noir chamotté brut',
     size: 'H63xl30cm',
@@ -154,20 +272,45 @@ export const kpla = [
     sorting: 1,
     type: [ProductTypes.LUMINAIRES],
   },
+
   {
-    id: 10,
-    image: Image68,
-    name: 'Chicago N°2',
-    ratio: 1.5,
-    description: 'Grès noir chamotté brut',
-    size: 'H53xl25cm',
-    image_over: Image20_over,
+    id: 119,
+    image: Image115,
+    name: 'Korhogo',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'H63 x D35cm',
+    image_over: Image115,
     sorting: 1,
-    type: [ProductTypes.LUMINAIRES],
+    type: [ProductTypes.DECORATION],
+    additional_images: [Image114],
+  },
+
+  {
+    id: 122,
+    image: Image118,
+    name: 'Zanzibar',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'H50 x D32cm',
+    image_over: Image118,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
   },
 ];
 
 export const jeu_d_anses = [
+  /*   {
+    id: 114,
+    image: Image110,
+    name: 'Vase Anse Lipizan',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'D18 x H12cm',
+    image_over: Image110,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+  }, */
   {
     id: 11,
     image: Image53,
@@ -215,17 +358,54 @@ export const jeu_d_anses = [
   {
     id: 15,
     image: Image40,
-    name: 'Yassa',
+    name: 'Vase Yassa',
     ratio: 1.5,
     description: 'Grès noir chamotté brut et émaillé',
     size: 'H25xl15cm',
     image_over: Image44_over,
     sorting: 1,
     type: [ProductTypes.DECORATION],
+    additional_images: [Image111],
   },
 ];
 
 export const organic = [
+  {
+    id: 111,
+    image: Image107,
+    name: 'Coupe Santorini',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'D38 x H12',
+    image_over: Image107,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+    additional_images: [Image108],
+  },
+
+  {
+    id: 106,
+    image: Image102,
+    name: 'Coupe Ronce',
+    ratio: 1.4,
+    description: 'Grès noir',
+    size: 'L42 x 20cm',
+    image_over: Image102,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+  },
+
+  {
+    id: 108,
+    image: Image104,
+    name: 'Coupelles',
+    ratio: 1.4,
+    description: 'Grès noir',
+    size: 'Tailles diverses',
+    image_over: Image104,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+  },
   {
     id: 16,
     image: Image44,
@@ -252,6 +432,17 @@ export const organic = [
 
 export const others = [
   {
+    id: 121,
+    image: Image117,
+    name: 'Zanzibar',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'H47 x D29cm',
+    image_over: Image117,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+  },
+  {
     id: 18,
     image: Image19,
     name: 'Cocody',
@@ -262,6 +453,75 @@ export const others = [
     sorting: 1,
     type: [ProductTypes.LUMINAIRES],
   },
+  {
+    id: 24,
+    image: Image21,
+    name: 'Coper',
+    ratio: 1,
+    description: 'Grès noir brut',
+    size: 'H52xl45cm',
+    image_over: Image21_over,
+    sorting: 1,
+    type: [ProductTypes.LUMINAIRES],
+  },
+  {
+    id: 30,
+    image: Image18,
+    name: 'Assinie',
+    ratio: 1.5,
+    description: 'Grès blanc chamotté',
+    size: 'H78xD30cm',
+    image_over: Image44_over,
+    sorting: 1,
+    type: [ProductTypes.LUMINAIRES],
+  },
+  {
+    id: 23,
+    image: Image65,
+    name: 'Guéridon Éclipse N°1',
+    ratio: 1,
+    description: 'Grès blanc chamotté brut',
+    size: 'H33xD43cm',
+    image_over: Image44_over,
+    sorting: 1,
+    type: [ProductTypes.PETIT_MOBILER],
+  },
+
+  {
+    id: 101,
+    image: Image97,
+    name: 'Guéridon Éclipse N°2',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté. Intérieur engobe orange.',
+    size: 'D42 x H31cm',
+    image_over: Image97,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+    additional_images: [Image96],
+  },
+  {
+    id: 116,
+    image: Image112,
+    name: 'Coupe Lipizan',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'D19 x H20cm',
+    image_over: Image112,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+  },
+  {
+    id: 117,
+    image: Image113,
+    name: 'Seau Lipizan',
+    ratio: 1.4,
+    description: 'Grès blanc chamotté émaillé',
+    size: 'D14 x H13cm',
+    image_over: Image113,
+    sorting: 1,
+    type: [ProductTypes.DECORATION],
+  },
+
   {
     id: 19,
     image: Image38,
@@ -284,17 +544,7 @@ export const others = [
     sorting: 1,
     type: [ProductTypes.BOUGIES],
   },
-  {
-    id: 21,
-    image: Image58,
-    name: 'Coupe Lipizan',
-    ratio: 1.5,
-    description: 'Grès blanc lisse émaillé',
-    size: 'H20xl20cm',
-    image_over: Image44_over,
-    sorting: 1,
-    type: [ProductTypes.ART_DE_LA_TABLE, ProductTypes.DECORATION],
-  },
+
   {
     id: 22,
     image: Image86,
@@ -307,28 +557,6 @@ export const others = [
     type: [ProductTypes.ART_DE_LA_TABLE, ProductTypes.DECORATION],
   },
 
-  {
-    id: 23,
-    image: Image65,
-    name: 'Guéridon Éclipse',
-    ratio: 1,
-    description: 'Grès blanc chamotté brut',
-    size: 'H33xD43cm',
-    image_over: Image44_over,
-    sorting: 1,
-    type: [ProductTypes.PETIT_MOBILER],
-  },
-  {
-    id: 24,
-    image: Image21,
-    name: 'Coper',
-    ratio: 1,
-    description: 'Grès noir brut',
-    size: 'H52xl45cm',
-    image_over: Image21_over,
-    sorting: 1,
-    type: [ProductTypes.LUMINAIRES],
-  },
   {
     id: 25,
     image: Image42,
@@ -351,28 +579,7 @@ export const others = [
     sorting: 1,
     type: [ProductTypes.ART_DE_LA_TABLE, ProductTypes.DECORATION],
   },
-  {
-    id: 27,
-    image: Image85,
-    name: 'Bougeoir Vésuve',
-    ratio: 1.4,
-    description: 'Grès noir brut, cire végétale',
-    size: 'D13xH24cm',
-    image_over: Image44_over,
-    sorting: 1,
-    type: [ProductTypes.BOUGIES, ProductTypes.DECORATION],
-  },
-  {
-    id: 28,
-    image: Image57,
-    name: 'Seau Lipizan',
-    ratio: 1,
-    description: 'Grès blanc lisse émaillé',
-    size: 'H13xD14cm',
-    image_over: Image44_over,
-    sorting: 1,
-    type: [ProductTypes.ART_DE_LA_TABLE, ProductTypes.DECORATION],
-  },
+
   {
     id: 29,
     image: Image67,
@@ -383,17 +590,6 @@ export const others = [
     image_over: Image44_over,
     sorting: 1,
     type: [ProductTypes.DECORATION],
-  },
-  {
-    id: 30,
-    image: Image18,
-    name: 'Assinie',
-    ratio: 1.5,
-    description: 'Grès blanc chamotté',
-    size: 'H78xD30cm',
-    image_over: Image44_over,
-    sorting: 1,
-    type: [ProductTypes.LUMINAIRES],
   },
   {
     id: 31,
@@ -415,4 +611,6 @@ export const allProducts = [
   ...jeu_d_anses,
   ...organic,
   ...others,
+  ...dakar,
+  ...collab_lelad,
 ];
