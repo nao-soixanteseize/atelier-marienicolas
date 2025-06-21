@@ -39,6 +39,27 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Google Analytics Setup
+
+This project includes Google Analytics 4 (GA4) integration. To complete the setup:
+
+1. Create a Google Analytics 4 property in your Google Analytics account if you haven't already.
+2. Find your Measurement ID (starts with 'G-').
+3. Open `src/utils/analytics.ts`.
+4. Replace `'G-XXXXXXXXXX'` with your actual Measurement ID.
+
+The following events are automatically tracked:
+- Page views (when the route changes)
+
+You can also track custom events using the `trackEvent` function:
+
+```typescript
+import { trackEvent } from './utils/analytics';
+
+// Example: Track a button click
+trackEvent('User Interaction', 'Button Click', 'Contact Button');
+```
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
